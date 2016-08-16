@@ -1,0 +1,15 @@
+setMethod('show', 'SAR',
+          function(object) {
+              callNextMethod(object)
+              cat('satellite   :', object@satellite, '\n')
+              if(length(object@polarization)>0)
+                  cat('polarization:', object@polarization, '\n')
+              if(length(object@geolocationPoints@data)>0)
+                  cat('gcps        :', names(object@geolocationPoints@data), '\n')
+              if(length(object@orbit)>0)
+                  cat('orbit       :', object@orbit, '\n')
+              if(length(object@node)>0)
+                  cat('node        :', object@node, '\n')
+              cat('warped      :', object@warped, '\n')
+              cat('Note that this is a Raster object.')
+          })
