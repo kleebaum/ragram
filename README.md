@@ -1,2 +1,2 @@
 # ragram
-R package to conduct radargrammetry
+Radargrammetry R package
