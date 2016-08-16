@@ -1,7 +1,7 @@
 setMethod('initialize', 'SAR', 
-          function(.Object, address='', raster=NULL, polarization=NULL, warped=F, ...) {
+          function(.Object, address='', raster=NULL, polarization=NULL, imgSubstring='', ...) {
               .Object@polarization <- tolower(polarization)
-              .Object@warped <- warped
+              .Object@imgSubstring <- imgSubstring
               
               if(nchar(address)==0) {
                   if(is.null(raster)) {

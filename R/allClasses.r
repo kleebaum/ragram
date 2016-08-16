@@ -27,7 +27,7 @@ setClass('GeolocationPoints',
 #' @slot geolocationPoints \code{\link{GeolocationPoints-class}} object that contains GCPs/TPs.
 #' @slot node direction of the satellite (ascending or descending).
 #' @slot orbit orbit number (e.g. sentinel has 175 in total).
-#' @slot warped logical. Should the SAR record be orientated using gdalwarp?
+#' @slot imgSubstring character. This substring is searched for when image data is read. 
 #' @export
 #' @examples 
 #' # orbit 130, dual polarization vv and vh
@@ -49,7 +49,7 @@ setClass('SAR',
              geolocationPoints = 'GeolocationPoints',
              orbit = 'numeric', # orbit number, e.g. sentinel has 175
              node = 'character', # either ascending or descending
-             warped = 'logical', # is the raster warped?
+             imgSubstring = 'character', # search for a substring when data is read
              border = 'SpatialPolygons'
          ),
          prototype = prototype(
@@ -66,7 +66,7 @@ setClass('SAR',
 #' @slot geolocationPoints \code{\link{GeolocationPoints-class}} object that contains GCPs/TPs.
 #' @slot node direction of the satellite (ascending or descending).
 #' @slot orbit orbit number (e.g. sentinel has 175 in total).
-#' @slot warped TRUE if the SAR record is orientated correctly.
+#' @slot imgSubstring character. This substring is searched for when image data is read. 
 #' @export
 #' @examples 
 #' # orbit 130, dual polarization vv and vh
@@ -101,7 +101,7 @@ setClass('Envisat',
 #' @slot geolocationPoints \code{\link{GeolocationPoints-class}} object that contains GCPs/TPs.
 #' @slot node direction of the satellite (ascending or descending).
 #' @slot orbit orbit number (e.g. sentinel has 175 in total).
-#' @slot warped TRUE if the SAR record is orientated correctly.
+#' @slot imgSubstring character. This substring is searched for when image data is read. 
 #' @export
 #' @examples 
 #' tsx_kili_2016_07_03_154637_hh <- new('TSX', warped=F, 

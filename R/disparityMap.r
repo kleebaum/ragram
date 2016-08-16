@@ -118,6 +118,7 @@ disparityMap <- function(master, slave, window.size=3, search.area.size=7,
                 
                 array.index <- arrayInd(which(disp.temp == max(disp.temp, na.rm=T)),
                                         dim.disp.temp)
+                return(array.index)
                 disp.map[u,v,] <- rownames(disp.temp)[array.index[,]]
             }
         }

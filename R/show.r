@@ -10,6 +10,6 @@ setMethod('show', 'SAR',
                   cat('orbit       :', object@orbit, '\n')
               if(length(object@node)>0)
                   cat('node        :', object@node, '\n')
-              cat('warped      :', object@warped, '\n')
+              #cat('warped      :', object@warped, '\n')
               cat('Note that this is a Raster object.')
           })

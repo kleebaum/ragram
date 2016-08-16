@@ -6,7 +6,7 @@
 #' @param address character. Folder address of satellite data.
 #' @param raster RasterLayer object.
 #' @param satellite character. Either 'sentinel-1' or 'terrasar-x'.
-#' @param warped logical. Should the SAR record be orientated using gdalwarp?
+#' @param imgSubstring character. This substring is searched for when image data is read. 
 #' @param polarization. character. E.g.'vv' or 'hh'. 
 #' If the polarization is not given it will be determined from metadata.
 #' @return object of SAR class or subclass that is a well a RasterLayer object.
@@ -14,20 +14,20 @@
 #' @examples 
 #' my.sar.record <- sarRecord(address='sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
 #' satellite='sentinel-1')
-sarRecord <- function(address='', raster=NULL, satellite='', warped=F,
+sarRecord <- function(address='', raster=NULL, satellite='', imgSubstring='',
                       polarization=NULL, ...) {
     switch (satellite,
-            'sentinel' = new('Sentinel', address=address, raster=raster, warped=warped,
+            'sentinel' = new('Sentinel', address=address, raster=raster, imgSubstring=imgSubstring,
                              polarization=polarization, ...),
-            'sentinel-1' = new('Sentinel', address=address, raster=raster, warped=warped,
+            'sentinel-1' = new('Sentinel', address=address, raster=raster, imgSubstring=imgSubstring,
                                polarization=polarization, ...),
-            # 'envisat' = new('Envisat', address=address, raster=raster, warped=warped,
+            # 'envisat' = new('Envisat', address=address, raster=raster, imgSubstring=imgSubstring,
             #                 polarization=polarization, ...),
-            'terrasar-x' = new('TSX', address=address, raster=raster, warped=warped,
+            'terrasar-x' = new('TSX', address=address, raster=raster, imgSubstring=imgSubstring,
                                polarization=polarization, ...),
-            'tsx' = new('TSX', address=address, raster=raster, warped=warped,
+            'tsx' = new('TSX', address=address, raster=raster, imgSubstring=imgSubstring,
                                polarization=polarization, ...),
-            new('SAR', address=address, raster=raster, warped=warped,
+            new('SAR', address=address, raster=raster, imgSubstring=imgSubstring,
                 polarization=polarization, ...)
     )
 }
