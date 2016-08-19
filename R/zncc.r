@@ -5,16 +5,30 @@
 #' 
 #' @param master \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param u1 x coordinate of master pixel.
-#' @param v1 y coordinate of master pixel.
-#' @param u2 x coordinate of slave pixel.
-#' @param v2 y coordinate of slave pixel.
-#' @param n (window size-1)/2 in x direction.
-#' @param m (window size-1)/2 in y direction.
+#' @param u1 Integer. Column, i.e. y coordinate of master pixel.
+#' @param v1 Integer. Row, i.e. x coordinate of master pixel.
+#' @param u2 Integer. Column, i.e. y coordinate of slave pixel.
+#' @param v2 Integer. Row, i.e. x coordinate of slave pixel.
+#' @param n Integer. (Window size-1)/2 in x direction.
+#' @param m Integer. (Window size-1)/2 in y direction.
 #' @export
-zncc <- function(master, slave, u1, v1, u2, v2, n, m=n) {
-    cor(master[(u1-n):(u1+n), (v1-m):(v1+m)], slave[(u2-n):(u2+n), (v2-m):(v2+m)])
-}
+setGeneric('zncc', function(master, slave, u1, v1, u2, v2, n=3, m=n) {
+    standardGeneric('zncc')
+})
+
+#' @export
+setMethod('zncc', c('RasterLayer', 'RasterLayer'), 
+          function(master, slave, u1, v1, u2, v2, n=3, m=n) {
+              cor(master[(u1-n):(u1+n), (v1-m):(v1+m)], slave[(u2-n):(u2+n), (v2-m):(v2+m)])
+          })
+
+#' @export
+setMethod('zncc', c('matrix', 'matrix'), 
+          function(master, slave, u1, v1, u2, v2, n=3, m=n) {
+              master <- raster(master)
+              slave <- raster(slave)
+              cor(master[(u1-n):(u1+n), (v1-m):(v1+m)], slave[(u2-n):(u2+n), (v2-m):(v2+m)])
+          })
 
 #' Sum of squared differences (SSD)
 #'
@@ -23,13 +37,13 @@ zncc <- function(master, slave, u1, v1, u2, v2, n, m=n) {
 #' 
 #' @param master \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param u1 x coordinate of master pixel.
-#' @param v1 y coordinate of master pixel.
-#' @param u2 x coordinate of slave pixel.
-#' @param v2 y coordinate of slave pixel.
-#' @param n (window size-1)/2 in x and y direction.
+#' @param u1 Integer. Column, i.e. y coordinate of master pixel.
+#' @param v1 Integer. Row, i.e. x coordinate of master pixel.
+#' @param u2 Integer. Column, i.e. y coordinate of slave pixel.
+#' @param v2 Integer. Row, i.e. x coordinate of slave pixel.
+#' @param n Integer. (Window size-1)/2 in x and y direction.
 #' @export
-ssd <- function(master, slave, u1, v1, u2, v2, n) {
+ssd <- function(master, slave, u1, v1, u2, v2, n=3) {
     sum((img1[(u1-n):(u1+n), (v1-n):(v1+n)] - img2[(u2-n):(u2+n), (v2-n):(v2+n)])^2)
 }
 
@@ -40,25 +54,25 @@ ssd <- function(master, slave, u1, v1, u2, v2, n) {
 #' 
 #' @param master \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param u1 x coordinate of master pixel.
-#' @param v1 y coordinate of master pixel.
-#' @param u2 x coordinate of slave pixel.
-#' @param v2 y coordinate of slave pixel.
-#' @param n (window size-1)/2 in x and y direction.
+#' @param u1 Integer. Column, i.e. y coordinate of master pixel.
+#' @param v1 Integer. Row, i.e. x coordinate of master pixel.
+#' @param u2 Integer. Column, i.e. y coordinate of slave pixel.
+#' @param v2 Integer. Row, i.e. x coordinate of slave pixel.
+#' @param n Integer. (Window size-1)/2 in x and y direction.
 #' @export
 sad <- function(master, slave, u1, v1, u2, v2, n) {
     sum(abs(img1[(u1-n):(u1+n), (v1-n):(v1+n)] - img2[(u2-n):(u2+n), (v2-n):(v2+n)]))
 }
 
-#' Calculates window mean
+#' Window mean
 #' 
 #' Calculates window mean for a given \code{\link{SAR-class}} object.
 #' The window is a square.
 #' 
 #' @param object \code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param u center of window (x coordinate).
-#' @param v center of window (y coordinate).
-#' @param n (window size-1)/2 in x and y direction.
+#' @param u Integer. Center of window (column, i.e. y coordinate).
+#' @param v Integer. Center of window (row, i.e. x coordinate).
+#' @param n Integer. (Window size-1)/2 in x and y direction.
 #' @export
 getAverage <- function(object, u, v, n) {
     s <- 0

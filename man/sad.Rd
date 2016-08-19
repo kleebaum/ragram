@@ -11,15 +11,15 @@ sad(master, slave, u1, v1, u2, v2, n)
 
 \item{slave}{\code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{u1}{x coordinate of master pixel.}
+\item{u1}{Integer. Column, i.e. y coordinate of master pixel.}
 
-\item{v1}{y coordinate of master pixel.}
+\item{v1}{Integer. Row, i.e. x coordinate of master pixel.}
 
-\item{u2}{x coordinate of slave pixel.}
+\item{u2}{Integer. Column, i.e. y coordinate of slave pixel.}
 
-\item{v2}{y coordinate of slave pixel.}
+\item{v2}{Integer. Row, i.e. x coordinate of slave pixel.}
 
-\item{n}{(window size-1)/2 in x and y direction.}
+\item{n}{Integer. (Window size-1)/2 in x and y direction.}
 }
 \description{
 Calculates the sum of absolute differences (SAD) between two \code{\link{SAR-class}} objects.

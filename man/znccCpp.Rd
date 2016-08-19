@@ -2,9 +2,26 @@
 % Please edit documentation in R/RcppExports.R
 \name{znccCpp}
 \alias{znccCpp}
-\title{Zero normalized cross correlation (ZNCC)}
+\title{Zero normalized cross correlation (ZNCC) written in C++}
 \usage{
 znccCpp(master, slave, u1, v1, u2, v2, n)
+}
+\arguments{
+\item{master}{Matrix.}
+
+\item{slave}{Matrix.}
+
+\item{u1}{Integer. Column, i.e. y coordinate of master pixel.}
+
+\item{v1}{Integer. Row, i.e. x coordinate of master pixel.}
+
+\item{u2}{Integer. Column, i.e. y coordinate of slave pixel.}
+
+\item{v2}{Integer. Row, i.e. x coordinate of slave pixel.}
+
+\item{n}{Integer. (Window size-1)/2 in x direction.}
+
+\item{m}{Integer. (Window size-1)/2 in y direction.}
 }
 \description{
 Calculates the zero normalized cross correlation (ZNCC) coefficient between two \code{\link{SAR-class}} objects.

@@ -25,17 +25,17 @@ anglesKriging(object, slave, z = "thetaIn", formula = as.formula(paste(z,
   variogram.fit = T, plot.fit = F, ...)
 }
 \arguments{
-\item{object}{object of class \code{\link{SpatialPointsDataFrame}}.}
+\item{object}{Object of class \code{\link{SpatialPointsDataFrame}}.}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{formula}{formula used for kriging (see \code{\link{krige}} of gstat package).}
+\item{formula}{Formula used for kriging (see \code{\link{krige}} of gstat package).}
 
-\item{variogram.fit}{logical. Fit a Gaussian variogram?}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{logical. Plot the fitted variogram?}
+\item{plot.fit}{Logical. Plot the fitted variogram?}
 
-\item{spatialPoints}{object of \code{\link{SpatialPoints}} class.}
+\item{spatialPoints}{Object of \code{\link{SpatialPoints}} class.}
 }
 \description{
 Angles provided by GCPs/TPs are known.

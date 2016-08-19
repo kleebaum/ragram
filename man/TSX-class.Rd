@@ -21,7 +21,7 @@ This class inherits from the \code{\link{SAR-class}}.
 
 \item{\code{orbit}}{orbit number (e.g. sentinel has 175 in total).}
 
-\item{\code{warped}}{TRUE if the SAR record is orientated correctly.}
+\item{\code{imgSubstring}}{character. This substring is searched for when image data is read.}
 }}
 \examples{
 tsx_kili_2016_07_03_154637_hh <- new('TSX', warped=F, 

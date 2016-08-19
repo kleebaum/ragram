@@ -19,8 +19,7 @@ plotSAR(object, slave = NULL, xlab = "Longitude", ylab = "Latitude",
   max.val, cex.axis, cex.lab, legend.by, plotIntersect, border, grid,
   plot.legend, legend.lab, legend.line, breaks, legend.breaks, zlim, cols,
   xlim = c(object@extent@xmin, object@extent@xmax),
-  ylim = c(object@extent@ymin, object@extent@ymax),
-  asp = 1/cos((mean(range(ylim)) * pi)/180), ...)
+  ylim = c(object@extent@ymin, object@extent@ymax), asp = NULL, ...)
 
 \S4method{plotSAR}{RasterLayer,ANY}(object, slave = NULL,
   xlab = "Longitude", ylab = "Latitude", maxpixels = 50000,
@@ -38,8 +37,7 @@ plotSAR(object, slave = NULL, xlab = "Longitude", ylab = "Latitude",
   legend.lab, legend.line, breaks, legend.breaks, zlim, cols,
   xlim = c(min(object@extent@xmin, slave@extent@xmin), max(object@extent@xmax,
   slave@extent@xmax)), ylim = c(min(object@extent@ymin, slave@extent@ymin),
-  max(object@extent@ymax, slave@extent@ymax)), asp = 1/cos((mean(range(ylim))
-  * pi)/180), ...)
+  max(object@extent@ymax, slave@extent@ymax)), asp = NULL, ...)
 
 \S4method{plotSAR}{SARSet,ANY}(object, slave = NULL, xlab = "Longitude",
   ylab = "Latitude", maxpixels = 50000, max.val = 500, cex.axis = 1,

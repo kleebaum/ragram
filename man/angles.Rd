@@ -6,45 +6,58 @@
 \title{Angles}
 \usage{
 angles(object, z = "thetaIn", interpolate = F, variogram.fit = T,
-  plot.fit = F, aggregate = F, aggregate.fact = 100, ...)
+  plot.fit = F, aggregate = T, aggregate.fact = 1000, ...)
 
 \S4method{angles}{GeolocationPoints}(object, z = "thetaIn", interpolate = F,
-  variogram.fit = T, plot.fit = F, aggregate = F, aggregate.fact = 100,
+  variogram.fit = T, plot.fit = F, aggregate = T, aggregate.fact = 1000,
   ...)
 
 \S4method{angles}{SAR}(object, z = "thetaIn", interpolate = F,
-  variogram.fit = T, plot.fit = F, aggregate = F, aggregate.fact = 100,
+  variogram.fit = T, plot.fit = F, aggregate = T, aggregate.fact = 1000,
   ...)
 
 \S4method{angles}{SARSet}(object, z = "thetaIn", interpolate = F,
-  variogram.fit = T, plot.fit = F, aggregate = F, aggregate.fact = 100,
+  variogram.fit = T, plot.fit = F, aggregate = T, aggregate.fact = 1000,
   ...)
 }
 \arguments{
-\item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{interpolate}{TRUE if angles should be interpolated.}
+\item{interpolate}{Logical. Interpolate angles?}
 
-\item{variogram.fit}{logical. Fit a Gaussian variogram?}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{logical. Plot the fitted variogram?}
+\item{plot.fit}{Logical. Plot the fitted variogram?}
 
-\item{aggregate}{logical. Should the raster be aggregated? 
-If no aggregation is done the interpolation might take a very long time.}
-
-\item{aggregate.fact}{integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+\item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 See \code{\link{aggregate}} method of raster package.}
+
+\item{aggregate.}{Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.}
+}
+\value{
+\code{\link{SpatialPointsDataFrame}}
 }
 \description{
 Returns angles provided by GCPs/TPs as a \code{\link{SpatialPointsDataFrame}} object.
 }
 \examples{
 data(kili)
-angles(master)
-plot(angles(master))
+
+angles(kili[[1]])
+plotAngles(kili[[1]])
+plotAngles(kili[[5]])
+
+plot(angles(kili[[1]]))
+spplot(angles(kili[[1]]))
+
+plotAngles(master, interpolate = T, aggregate.fact=100)
+
+angles.sp <- angles(master, interpolate = T, aggregate.fact=10)
+angles.raster <- rasterFromXYZ(angles.sp)
+plot(angles.raster)
 }
 \seealso{
 \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}

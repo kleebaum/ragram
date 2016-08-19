@@ -4,17 +4,15 @@
 \alias{sarRecord}
 \title{Create a synthetic aperture radar (SAR) object}
 \usage{
-sarRecord(address = "", raster = NULL, satellite = "", warped = F,
-  polarization = NULL, ...)
+sarRecord(object, satellite = "", imgSubstring = "", polarization = NULL,
+  ...)
 }
 \arguments{
-\item{address}{character. Folder address of satellite data.}
-
-\item{raster}{RasterLayer object.}
+\item{object}{either a character given the folder address of satellite data or a RasterLayer object.}
 
 \item{satellite}{character. Either 'sentinel-1' or 'terrasar-x'.}
 
-\item{warped}{logical. Should the SAR record be orientated using gdalwarp?}
+\item{imgSubstring}{character. This substring is searched for when image data is read.}
 
 \item{polarization.}{character. E.g.'vv' or 'hh'. 
 If the polarization is not given it will be determined from metadata.}
@@ -27,7 +25,7 @@ Creates a synthetic aperture radar (SAR) object.
 The input is either an existing raster or the folder address of satellite data.
 }
 \examples{
-my.sar.record <- sarRecord(address='sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
+my.sar.record <- sarRecord('sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
 satellite='sentinel-1')
 }
 

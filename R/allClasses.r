@@ -139,5 +139,5 @@ setClass('SARSet',
              crs = 'CRS',
              extent = 'Extent'),
          prototype = prototype(
-             crs = CRS('+init=epsg:4326')),
+             crs = CRS('+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0')),
          contains = c('list', 'SARGeneric'))

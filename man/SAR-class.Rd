@@ -21,7 +21,7 @@ This class inherits from the \code{\link{RasterLayer}} class of the raster packa
 
 \item{\code{orbit}}{orbit number (e.g. sentinel has 175 in total).}
 
-\item{\code{warped}}{logical. Should the SAR record be orientated using gdalwarp?}
+\item{\code{imgSubstring}}{character. This substring is searched for when image data is read.}
 }}
 \examples{
 # orbit 130, dual polarization vv and vh

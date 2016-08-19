@@ -3,78 +3,84 @@
 #' Calculates a disparity map between two SAR records using window based 
 #' zero normalized cross correlation (ZNCC).
 #' 
-#' @param master object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param slave object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param window.size window size to calculate \code{\link{zncc}}.
-#' @param search.area.size size of search area in slave image.
-#' @param search.area.shift numeric vector. Pixels in x and y direction that the search window should be shifted.
-#' That's a way you can put in a priori knowledge about disparity.
-#' @param resample.slave logical. Should the slave image be resampled to the aggregated master image?
-#' @param use.expected.disparity logical. Should the disparity should be estimated first?
-#' @param index moving window indices.
-#' @param run.parallel logical. Run algorithm on more than one cores?
-#' @param cores integer. How many cores should be allocated?
-#' @param log logical. Log output to text file?
-#' @param log.file character. Log file name.
+#' @param master Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
+#' @param slave Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
+#' @param window.size Integer or vector of integers. Edge Length of quadratic window(s) to calculate \code{\link{zncc}}.
+#' Correlation coefficients are multiplied if a vector is provided.
+#' @param search.area.size Integer. Edge Length of quadratic search area in slave image.
+#' @param search.area.shift numeric vector. Pixels in x and y direction that the search area should be shifted.
+#' That is how a priori knowledge about disparity can be regarded.
+#' @param resample.slave Logical. Should the slave image be resampled to the aggregated master image?
+#' @param run.parallel Logical. Run algorithm on more than one cores?
+#' @param cores Integer. How many cores should be allocated?
+#' @param log Logical. Log output to text file?
+#' @param log.file Character. Log file address and name.
+#' @return array giving disparities in x and y direction. The disparity is measured in pixel.
 #' @export
 #' @seealso \code{\link{zncc}}, \code{\link{plotDisparityMap}}
 #' @examples
 #' data(kili)
 #' plotDisparityMap(master, slave)
-disparityMap <- function(master, slave, window.size=3, search.area.size=7,
+disparityMap <- function(master, slave, 
+                         window.size=3, search.area.size=7,
                          search.area.shift=c(0,0),
                          resample.slave=T,
                          window.moving.step=1,
-                         index=as.array(round(seq((-1*(search.area.size-max(window.size))/2),
-                                                  ((search.area.size-max(window.size))/2), 
-                                                  by=window.moving.step))), 
-                         run.parallel=F, cores=4, log=F, log.file='dispMapLog.txt', ...) {
-    # if(window.size %% 2 != 1) {
-    #     window.size <- window.size + 1
-    #     cat('Window size needs to be unequal, it was set on', window.size, '\n')
-    # }
+                         run.parallel=F, cores=4, 
+                         log=F, log.file='dispMapLog.txt', ...) {
+    for(i in 1:length(window.size)) {
+        if(window.size[i] %% 2 != 1) {
+            window.size[i] <- window.size[i] + 1
+            cat('Window size needs to be uneven. Window size nr., i,  was set on', window.size[i], '\n')
+        }
+    }
     if(search.area.size %% 2 != 1) {
         search.area.size <- search.area.size + 1
-        cat('Search window size needs to be unequal, it was set on', search.area.size, '\n')
+        cat('Search window size needs to be uneven, it was set on', search.area.size, '\n')
     }
     
     if(resample.slave) {
         slave <- resample(slave, master)
     }
     
+    index <- as.array(round(seq((-1*(search.area.size-max(window.size))/2),
+                                ((search.area.size-max(window.size))/2), 
+                                by=window.moving.step)))
+    
+    if(length(window.size)>1) {
+        cat('More than one window size is given. Correlation coefficients will be multiplied.\n')
+    }
+    
     n <- c((window.size-1)/2) # n in formula of zncc
     
-    cat('ZNCC is calculated for a max window size of ', max(window.size), ' (pixels).\n', sep='')
-    cat('Search area size is ', search.area.size, '.\n', sep='')
+    cat('ZNCC is calculated for a (maximal) window size of', max(window.size), 'pixels.\n')
+    cat('Search area size is', search.area.size, 'pixels.\n')
     cat('Windows are centered for indices', index, 'in each search window (center is zero).\n')
     
     disp.map <- array(dim=c(max(dim(master)[1],dim(slave)[1]), max(dim(master)[2],dim(slave)[2]), 2),
-                      dimnames = list(NULL, NULL, c('disp_lat', 'disp_lon')))
+                      dimnames = list(NULL, NULL, c('dispX', 'dispY')))
     
-    disp.temp <- matrix(nrow = dim(index), ncol = dim(index), dimnames = list(index, index))
-    dim.disp.temp <- dim(disp.temp)
+    zncc.matrix <- matrix(nrow = dim(index), ncol = dim(index), dimnames = list(index, index))
+    dim.zncc.matrix <- dim(zncc.matrix)
     
-    u.buffer.border <- abs(min(index))+max(n)+1
-    v.buffer.border <- abs(min(index))+max(n)+1
+    u.buffer.border <- abs(min(index))+max(n)+1 # u resembles y direction
+    v.buffer.border <- abs(min(index))+max(n)+1 # v resembles x direction
     u.max <- min(dim(master)[1],dim(slave)[1])-abs(max(index))-max(n)-1
     v.max <- min(dim(master)[2],dim(slave)[2])-abs(max(index))-max(n)-1
     
-    if(search.area.shift[1]< 0) {
-        u.buffer.border <- u.buffer.border - search.area.shift[1]
+    if(search.area.shift[2]< 0) { # shift in y direction
+        u.buffer.border <- u.buffer.border - search.area.shift[2] 
     } else {
-        u.max <- u.max - search.area.shift[1]
+        u.max <- u.max - search.area.shift[2]
     }
-    if(search.area.shift[2]< 0) {
-        v.buffer.border <- v.buffer.border - search.area.shift[2]
+    if(search.area.shift[1]< 0) { # shift in x direction
+        v.buffer.border <- v.buffer.border - search.area.shift[1]
     } else {
-        v.max <- v.max - search.area.shift[2]
+        v.max <- v.max - search.area.shift[1]
     }
     
-    master <- matrix(master[], nrow = master@nrows, 
-                     ncol=master@ncols, byrow = T)
-
-    slave <- matrix(slave[], nrow = slave@nrows, 
-                     ncol=slave@ncols, byrow = T)
+    master <- matrix(master[], nrow = master@nrows, ncol=master@ncols, byrow = T)
+    slave <- matrix(slave[], nrow = slave@nrows, ncol=slave@ncols, byrow = T)
     
     if(run.parallel) {
         cat('Started calculation of local disparity maps.\n')
@@ -91,15 +97,15 @@ disparityMap <- function(master, slave, window.size=3, search.area.size=7,
             cat('Started calculation of local disparity map within ', start.u, ':', end.u, '.\n', sep='')
             
             disp.map.local <- array(dim=c((end.u-start.u+1), max(dim(master)[2],dim(slave)[2]), 2),
-                                    dimnames = list(NULL, NULL, c('disp_lat', 'disp_lon')))
+                                    dimnames = list(NULL, NULL, c('dispX', 'dispY')))
             
             for (u in start.u:end.u) {
                 for (v in v.buffer.border:v.max) {
-                    disp.temp[,] <- .getPyramidalZnccsInSearchArea(master, slave, index,
-                                                            u, v, n, search.area.shift)
-
-                    array.index <- arrayInd(which(disp.temp == max(disp.temp, na.rm=T)), dim.disp.temp)
-                    disp.map.local[u-start.u+1,v,] <- rownames(disp.temp)[array.index[,]]
+                    zncc.matrix[,] <- znccMatrixCpp(master, slave, index,
+                                                    u, v, n, search.area.shift)
+                    
+                    array.index <- arrayInd(which(zncc.matrix == max(zncc.matrix, na.rm=T)), dim.zncc.matrix)
+                    disp.map.local[u-start.u+1,v,] <- rev(rownames(zncc.matrix)[array.index[,]])
                 }
             }
             storage.mode(disp.map.local) <- 'numeric'
@@ -109,21 +115,25 @@ disparityMap <- function(master, slave, window.size=3, search.area.size=7,
         disp.map[u.buffer.border:u.max, ,] <- disp.maps.local
     } else {
         cat('Started calculation of global disparity map.\n')
+        # disp.map[u.buffer.border:u.max, v.buffer.border:v.max, ] <- 
+        #     disparityMapCpp(master, slave, index, n, u.buffer.border, u.max,
+        #                 v.buffer.border,v.max,  search.area.shift)
         pb <- txtProgressBar(min=u.buffer.border, max=u.max, style=3)
         for (u in u.buffer.border:u.max) {
             setTxtProgressBar(pb, u)
             for (v in v.buffer.border:v.max) {
-                disp.temp[,] <- .getPyramidalZnccsInSearchArea(master, slave, index,
-                                                        u, v, n, search.area.shift)
+                zncc.matrix[,] <- znccMatrixCpp(master, slave, index,
+                                                u, v, n, search.area.shift)
                 
-                array.index <- arrayInd(which(disp.temp == max(disp.temp, na.rm=T)),
-                                        dim.disp.temp)
-                return(array.index)
-                disp.map[u,v,] <- rownames(disp.temp)[array.index[,]]
+                array.index <- arrayInd(which(zncc.matrix == max(zncc.matrix, na.rm=T)),
+                                        dim.zncc.matrix)
+                disp.map[u,v,] <- rev(rownames(zncc.matrix)[array.index[,]])
             }
         }
         close(pb)
     }
     storage.mode(disp.map) <- 'numeric'
+    disp.map[,,1] <- disp.map[,,1] - search.area.shift[1]
+    disp.map[,,2] <- disp.map[,,2] - search.area.shift[2]
     return(disp.map)
 }

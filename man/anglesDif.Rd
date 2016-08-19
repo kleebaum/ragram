@@ -5,25 +5,27 @@
 \title{Angles differences of two SAR records}
 \usage{
 anglesDif(object, slave = NULL, z = "thetaIn", variogram.fit = T,
-  plot.fit = F, interpolate = F, aggregate.fact = 100, ...)
+  plot.fit = F, interpolate = F, aggregate.fact = 1000, ...)
 }
 \arguments{
-\item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{slave}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{slave}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{variogram.fit}{TRUE if a Gaussian variogram should be fitted}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{TRUE if the fitted variogram should be plotted}
+\item{plot.fit}{Logical. Plot the fitted variogram?}
 
-\item{interpolate}{TRUE if angles should be interpolated.}
+\item{interpolate}{Logical. Interpolate angles?}
 
-\item{aggregate.fact}{integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+\item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
-See \code{\link{aggregate}} method of raster package. If aggregate.fact equals 1, no aggregation is done, 
-but then the interpolation might take a very long time...}
+See \code{\link{aggregate}} method of raster package.}
+}
+\value{
+\code{\link{SpatialPointsDataFrame}}
 }
 \description{
 Returns the differences in angles within the intersection area of two SAR records.
@@ -33,7 +35,16 @@ Returns the results as a \code{\link{SpatialPointsDataFrame}} object.
 }
 \examples{
 data(kili)
-anglesDif(master, slave)
+
+anglesDif(kili[[1]], kili[[5]])
+plotAnglesDif(kili[[1]], kili[[5]])
+
+anglesDif(master, slave, interpolate=T, aggregate.fact=100)
+plotAnglesDif(master, slave, interpolate=T, aggregate.fact=100)
+
+anglesDif.sp <- anglesDif(master, slave, interpolate = T, aggregate.fact=10)
+anglesDif.raster <- rasterFromXYZ(anglesDif.sp)
+plot(anglesDif.raster)
 }
 \seealso{
 \code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}

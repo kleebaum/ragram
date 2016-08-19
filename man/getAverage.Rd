@@ -2,18 +2,18 @@
 % Please edit documentation in R/zncc.r
 \name{getAverage}
 \alias{getAverage}
-\title{Calculates window mean}
+\title{Window mean}
 \usage{
 getAverage(object, u, v, n)
 }
 \arguments{
 \item{object}{\code{\link{SAR-class}} object (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{u}{center of window (x coordinate).}
+\item{u}{Integer. Center of window (column, i.e. y coordinate).}
 
-\item{v}{center of window (y coordinate).}
+\item{v}{Integer. Center of window (row, i.e. x coordinate).}
 
-\item{n}{(window size-1)/2 in x and y direction.}
+\item{n}{Integer. (Window size-1)/2 in x and y direction.}
 }
 \description{
 Calculates window mean for a given \code{\link{SAR-class}} object.

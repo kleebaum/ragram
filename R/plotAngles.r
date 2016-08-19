@@ -19,8 +19,18 @@
 #' @seealso  \code{\link{angles}}, \code{\link{GeolocationPoints-class}}
 #' @examples
 #' data(kili)
-#' plotAngles(master)
-#' plot(angles(master))
+#' 
+#' angles(kili[[1]])
+#' plotAngles(kili[[1]])
+#' plotAngles(kili[[5]])
+#' 
+#' plot(angles(kili[[1]]))
+#' spplot(angles(kili[[1]]))
+#' 
+#' plotAngles(master, interpolate = T, aggregate.fact=100)
+#' 
+#' angles.sp <- angles(master, interpolate = T, aggregate.fact=10)
+#' angles.raster <- rasterFromXYZ(angles.sp)
 setGeneric('plotAngles', 
            function(object, z='thetaIn',
                     xlab='Longitude', ylab='Latitude', 

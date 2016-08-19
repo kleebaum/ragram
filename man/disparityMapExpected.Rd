@@ -4,29 +4,30 @@
 \alias{disparityMapExpected}
 \title{Expected (theoretical) disparity between two SAR records}
 \usage{
-disparityMapExpected(object, slave, h = 10, z = "thetaIn",
-  variogram.fit = T, plot.fit = F, interpolate = T,
-  aggregate.fact = 100, ...)
+disparityMapExpected(object, slave, h = 1, z = "thetaIn",
+  variogram.fit = T, plot.fit = F, interpolate = F,
+  aggregate.fact = 1000, ...)
 }
 \arguments{
-\item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{slave}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{slave}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{h}{numeric. Relative height.}
+\item{h}{Numeric. Relative height.}
 
 \item{z}{either incidence (default) or elevation angles 'thetaEl'.}
 
-\item{variogram.fit}{TRUE if a Gaussian variogram should be fitted}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{TRUE if the fitted variogram should be plotted}
+\item{plot.fit}{Logical. Plot the fitted variogram?}
 
-\item{interpolate}{TRUE if angles should be interpolated.}
+\item{interpolate}{Logical. Interpolate angles?}
 
-\item{aggregate.fact}{integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+\item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
-See \code{\link{aggregate}} method of raster package. If aggregate.fact equals 1, no aggregation is done, 
-but then the interpolation might take a very long time...}
+See \code{\link{aggregate}} method of raster package.}
+
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 }
 \description{
 Returns the expected disparity within the intersection area of two SAR records.
@@ -36,9 +37,12 @@ Returns the results as a \code{\link{SpatialPointsDataFrame}} object.
 }
 \examples{
 data(kili)
-anglesDif(master, slave)
+
+disparityMapExpected(kili[[1]], kili[[5]], h=1)
+
+disparityMapExpected(master, slave, interpolate = T, aggregate.fact = 100)
 }
 \seealso{
-\code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}
+\code{\link{disparityMap}}, \code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}
 }
 

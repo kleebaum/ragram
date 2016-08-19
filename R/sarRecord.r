@@ -3,8 +3,7 @@
 #' Creates a synthetic aperture radar (SAR) object. 
 #' The input is either an existing raster or the folder address of satellite data.
 #' 
-#' @param address character. Folder address of satellite data.
-#' @param raster RasterLayer object.
+#' @param object either a character given the folder address of satellite data or a RasterLayer object.
 #' @param satellite character. Either 'sentinel-1' or 'terrasar-x'.
 #' @param imgSubstring character. This substring is searched for when image data is read. 
 #' @param polarization. character. E.g.'vv' or 'hh'. 
@@ -12,9 +11,32 @@
 #' @return object of SAR class or subclass that is a well a RasterLayer object.
 #' @export
 #' @examples 
-#' my.sar.record <- sarRecord(address='sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
+#' my.sar.record <- sarRecord('sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
 #' satellite='sentinel-1')
-sarRecord <- function(address='', raster=NULL, satellite='', imgSubstring='',
+setGeneric('sarRecord', function(object, satellite='', imgSubstring='',
+                                 polarization=NULL, ...) {
+    standardGeneric('sarRecord')
+})
+
+#' @export
+setMethod('sarRecord', 'RasterLayer', function(object, ...) {
+    sarRecordDecision(address='', raster=object, satellite=satellite, 
+                      imgSubstring=imgSubstring, polarization=polarization, ...)
+})
+
+#' @export
+setMethod('sarRecord', 'character', function(object, ...) {
+        sarRecordDecision(address=object, raster=NULL, satellite=satellite, 
+                          imgSubstring=imgSubstring, polarization=polarization, ...)
+})
+
+#' @export
+setMethod('sarRecord', 'missing', function(...) {
+    sarRecordDecision(address='', raster=NULL, satellite=satellite, 
+                      imgSubstring=imgSubstring, polarization=polarization, ...)
+})
+
+sarRecordDecision <- function(address='', raster=NULL, satellite='', imgSubstring='',
                       polarization=NULL, ...) {
     switch (satellite,
             'sentinel' = new('Sentinel', address=address, raster=raster, imgSubstring=imgSubstring,

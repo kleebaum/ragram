@@ -6,36 +6,34 @@
 \usage{
 disparityMap(master, slave, window.size = 3, search.area.size = 7,
   search.area.shift = c(0, 0), resample.slave = T, window.moving.step = 1,
-  index = as.array(round(seq((-1 * (search.area.size - max(window.size))/2),
-  ((search.area.size - max(window.size))/2), by = window.moving.step))),
   run.parallel = F, cores = 4, log = F, log.file = "dispMapLog.txt",
   ...)
 }
 \arguments{
-\item{master}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{master}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{slave}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{slave}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{window.size}{window size to calculate \code{\link{zncc}}.}
+\item{window.size}{Integer or vector of integers. Edge Length of quadratic window(s) to calculate \code{\link{zncc}}.
+Correlation coefficients are multiplied if a vector is provided.}
 
-\item{search.area.size}{size of search area in slave image.}
+\item{search.area.size}{Integer. Edge Length of quadratic search area in slave image.}
 
-\item{search.area.shift}{numeric vector. Pixels in x and y direction that the search window should be shifted.
-That's a way you can put in a priori knowledge about disparity.}
+\item{search.area.shift}{numeric vector. Pixels in x and y direction that the search area should be shifted.
+That is how a priori knowledge about disparity can be regarded.}
 
-\item{resample.slave}{logical. Should the slave image be resampled to the aggregated master image?}
+\item{resample.slave}{Logical. Should the slave image be resampled to the aggregated master image?}
 
-\item{index}{moving window indices.}
+\item{run.parallel}{Logical. Run algorithm on more than one cores?}
 
-\item{run.parallel}{logical. Run algorithm on more than one cores?}
+\item{cores}{Integer. How many cores should be allocated?}
 
-\item{cores}{integer. How many cores should be allocated?}
+\item{log}{Logical. Log output to text file?}
 
-\item{log}{logical. Log output to text file?}
-
-\item{log.file}{character. Log file name.}
-
-\item{use.expected.disparity}{logical. Should the disparity should be estimated first?}
+\item{log.file}{Character. Log file address and name.}
+}
+\value{
+array giving disparities in x and y direction. The disparity is measured in pixel.
 }
 \description{
 Calculates a disparity map between two SAR records using window based 

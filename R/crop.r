@@ -1,8 +1,7 @@
 setMethod('crop', 'SAR',
           function(x, y, ...) {
               rasterCropped=callNextMethod(x, y, ...)
-              newSar <- sarRecord(raster=rasterCropped, satellite=x@satellite)
-              newSar@warped=x@warped
+              newSar <- sarRecord(rasterCropped, satellite=x@satellite)
               newSar@polarization=x@polarization
               newSar@orbit=x@orbit
               newSar@node=x@node

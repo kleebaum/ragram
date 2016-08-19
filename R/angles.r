@@ -2,26 +2,37 @@
 #' 
 #' Returns angles provided by GCPs/TPs as a \code{\link{SpatialPointsDataFrame}} object.
 #'  
-#' @param object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param z either incidence (default) or elevation angles 'thetaEl'.
-#' @param interpolate TRUE if angles should be interpolated.
-#' @param variogram.fit logical. Fit a Gaussian variogram?
-#' @param plot.fit logical. Plot the fitted variogram?
-#' @param aggregate logical. Should the raster be aggregated? 
-#' If no aggregation is done the interpolation might take a very long time.
-#' @param aggregate.fact integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+#' @param object Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
+#' @param z Character. either incidence ('thetaIn', default) or elevation angles 'thetaEl'.
+#' @param variogram.fit Logical. Fit a Gaussian variogram?
+#' @param plot.fit Logical. Plot the fitted variogram?
+#' @param interpolate Logical. Interpolate angles?
+#' @param aggregate. Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.
+#' @param aggregate.fact Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 #' Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 #' See \code{\link{aggregate}} method of raster package.
+#' @return \code{\link{SpatialPointsDataFrame}}
 #' @export
 #' @seealso \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 #' @examples
 #' data(kili)
-#' angles(master)
-#' plot(angles(master))
+#' 
+#' angles(kili[[1]])
+#' plotAngles(kili[[1]])
+#' plotAngles(kili[[5]])
+#' 
+#' plot(angles(kili[[1]]))
+#' spplot(angles(kili[[1]]))
+#' 
+#' plotAngles(master, interpolate = T, aggregate.fact=100)
+#' 
+#' angles.sp <- angles(master, interpolate = T, aggregate.fact=10)
+#' angles.raster <- rasterFromXYZ(angles.sp)
+#' plot(angles.raster)
 setGeneric('angles', 
            function(object, z='thetaIn', interpolate=F, 
                     variogram.fit=T, plot.fit=F, 
-                    aggregate=F, aggregate.fact=100, ...) {
+                    aggregate=T, aggregate.fact=1000, ...) {
                standardGeneric('angles')
            })
 

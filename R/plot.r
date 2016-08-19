@@ -88,7 +88,14 @@ setMethod('plotSAR', 'SAR',
                    breaks, legend.breaks, zlim, cols,
                    xlim=c(object@extent@xmin, object@extent@xmax),
                    ylim=c(object@extent@ymin, object@extent@ymax), 
-                   asp=1/cos((mean(range(ylim))*pi)/180), ...) {
+                   asp=NULL, ...) {
+              if(is.null(asp)) {
+                  if(object@extent[1]<180) {
+                      asp <- 1/cos((mean(range(ylim))*pi)/180)
+                  } else {
+                      asp <- 1
+                  }
+              }
               plot(xlim, ylim, type='n', cex.axis=cex.axis, cex.lab=cex.lab,
                    xlab=xlab, ylab=ylab, asp=asp, ...)
               if(grid)
@@ -125,8 +132,15 @@ setMethod('plotSAR', c('SAR', 'SAR'),
                           max(object@extent@xmax, slave@extent@xmax)),
                    ylim=c(min(object@extent@ymin, slave@extent@ymin),
                           max(object@extent@ymax, slave@extent@ymax)),
-                   asp=1/cos((mean(range(ylim))*pi)/180),
+                   asp=NULL,
                    ...) {
+              if(is.null(asp)) {
+                  if(object@extent[1]<180) {
+                      asp <- 1/cos((mean(range(ylim))*pi)/180)
+                  } else {
+                      asp <- 1
+                  }
+              }
               plot(xlim, ylim, type = 'n', cex.axis=cex.axis, cex.lab=cex.lab,
                    xlab=xlab, ylab=ylab, asp=asp, ...)
               if(grid)
