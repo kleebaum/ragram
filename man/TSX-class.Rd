@@ -11,25 +11,25 @@ This class inherits from the \code{\link{SAR-class}}.
 \section{Slots}{
 
 \describe{
-\item{\code{address}}{address of the SAR data main folder.}
+\item{\code{address}}{Character. Address of the SAR data main folder.}
 
-\item{\code{polarization}}{polarization of the SAR record (e.g. VV or HH).}
+\item{\code{polarization}}{Character. Polarization of the SAR record (e.g. VV or HH).}
 
 \item{\code{geolocationPoints}}{\code{\link{GeolocationPoints-class}} object that contains GCPs/TPs.}
 
-\item{\code{node}}{direction of the satellite (ascending or descending).}
+\item{\code{node}}{Character. Direction of the satellite (ascending or descending).}
 
-\item{\code{orbit}}{orbit number (e.g. sentinel has 175 in total).}
+\item{\code{orbit}}{Integer. Orbit number (e.g. sentinel has 175 in total).}
 
-\item{\code{imgSubstring}}{character. This substring is searched for when image data is read.}
+\item{\code{imgSubstring}}{Character. This substring is searched for when image data is read.}
 }}
 \examples{
-tsx_kili_2016_07_03_154637_hh <- new('TSX', warped=F, 
+tsx_kili_2016_07_03_154637_hh <- new('TSX',
                                  address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
 
 # alternatively
 sarRecord(address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637',
-          satellite='terrasar-x', warped=F)
+          satellite='terrasar-x')
 
 }
 \seealso{

@@ -3,17 +3,17 @@
 #' Plots the angles provided by GCPs/TPs as points.
 #'  
 #' @param object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
-#' @param z either incidence (default) or elevation angles 'thetaEl'.
-#' @param xlab title of the x axis.
-#' @param ylab title of the y axis.
-#' @param breaks number of breaks of the color ramp.
-#' @param col.regions color ramp.
-#' @param plot.legend TRUE if the legend is plotted.
-#' @param legend.lab title of the legend.
-#' @param asp aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
-#' @param variogram.fit TRUE if a Gaussian variogram should be fitted.
-#' @param plot.fit TRUE if the fitted variogram should be plotted.
-#' @param interpolate TRUE if angles should be interpolated.
+#' @param z Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.
+#' @param xlab Character. Title of the x axis.
+#' @param ylab Character. Title of the y axis.
+#' @param breaks Integer. Number of breaks of the color ramp.
+#' @param col.regions Color ramp.
+#' @param plot.legend Logical. Plot the legend?
+#' @param legend.lab Character. Title of the legend.
+#' @param asp Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
+#' @param variogram.fit Logical. Fit a Gaussian variogram?
+#' @param plot.fit. Logical. Plot the fitted variogram?
+#' @param interpolate Logical. Interpolate angles?
 #' @param ... graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.
 #' @export
 #' @seealso  \code{\link{angles}}, \code{\link{GeolocationPoints-class}}

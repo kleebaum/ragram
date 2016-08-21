@@ -19,7 +19,7 @@ Correlation coefficients are multiplied if a vector is provided.}
 
 \item{search.area.size}{Integer. Edge Length of quadratic search area in slave image.}
 
-\item{search.area.shift}{numeric vector. Pixels in x and y direction that the search area should be shifted.
+\item{search.area.shift}{Numeric vector. Pixels in x and y direction that the search area should be shifted.
 That is how a priori knowledge about disparity can be regarded.}
 
 \item{resample.slave}{Logical. Should the slave image be resampled to the aggregated master image?}
@@ -33,7 +33,8 @@ That is how a priori knowledge about disparity can be regarded.}
 \item{log.file}{Character. Log file address and name.}
 }
 \value{
-array giving disparities in x and y direction. The disparity is measured in pixel.
+Four dimensional array. The first and second dimension give rows and columns, respectively. 
+The third and forth dimension gives disparities in x and y direction. The disparity is measured in pixel.
 }
 \description{
 Calculates a disparity map between two SAR records using window based 
@@ -41,7 +42,22 @@ zero normalized cross correlation (ZNCC).
 }
 \examples{
 data(kili)
-plotDisparityMap(master, slave)
+
+master <- aggregate(master, 5)
+
+disp.map <- disparityMap(master, slave, window.size=11, search.area.size=25)
+
+disp.map.lon <- raster(disp.map[,,1])
+extent(disp.map.lon) <- extent(master)
+plot(disp.map.lon)
+
+disp.map.lat <- raster(disp.map[,,2])
+extent(disp.map.lat) <- extent(master)
+plot(disp.map.lat)
+
+disp.map.diagonal <- disp.map.lon
+values(disp.map.diagonal) <- sqrt(disp.map.lat[]^2 + disp.map.lon[]^2)
+plot(disp.map.diagonal)
 }
 \seealso{
 \code{\link{zncc}}, \code{\link{plotDisparityMap}}

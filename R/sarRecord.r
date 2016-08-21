@@ -11,8 +11,10 @@
 #' @return object of SAR class or subclass that is a well a RasterLayer object.
 #' @export
 #' @examples 
-#' my.sar.record <- sarRecord('sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
-#' satellite='sentinel-1')
+#' master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+#'                     satellite = 'sentinel') 
+#' slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+#'                     satellite = 'sentinel')
 setGeneric('sarRecord', function(object, satellite='', imgSubstring='',
                                  polarization=NULL, ...) {
     standardGeneric('sarRecord')

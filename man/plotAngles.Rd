@@ -34,29 +34,29 @@ plotAngles(object, z = "thetaIn", xlab = "Longitude", ylab = "Latitude",
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{xlab}{title of the x axis.}
+\item{xlab}{Character. Title of the x axis.}
 
-\item{ylab}{title of the y axis.}
+\item{ylab}{Character. Title of the y axis.}
 
-\item{breaks}{number of breaks of the color ramp.}
+\item{breaks}{Integer. Number of breaks of the color ramp.}
 
-\item{col.regions}{color ramp.}
+\item{col.regions}{Color ramp.}
 
-\item{plot.legend}{TRUE if the legend is plotted.}
+\item{plot.legend}{Logical. Plot the legend?}
 
-\item{legend.lab}{title of the legend.}
+\item{legend.lab}{Character. Title of the legend.}
 
-\item{variogram.fit}{TRUE if a Gaussian variogram should be fitted.}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{TRUE if the fitted variogram should be plotted.}
-
-\item{interpolate}{TRUE if angles should be interpolated.}
+\item{interpolate}{Logical. Interpolate angles?}
 
 \item{...}{graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.}
 
-\item{asp}{aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
+\item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
+
+\item{plot.fit.}{Logical. Plot the fitted variogram?}
 }
 \description{
 Plots the angles provided by GCPs/TPs as points.

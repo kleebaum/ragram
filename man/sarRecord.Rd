@@ -25,7 +25,9 @@ Creates a synthetic aperture radar (SAR) object.
 The input is either an existing raster or the folder address of satellite data.
 }
 \examples{
-my.sar.record <- sarRecord('sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
-satellite='sentinel-1')
+master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+                    satellite = 'sentinel') 
+slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+                    satellite = 'sentinel')
 }
 

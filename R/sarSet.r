@@ -6,7 +6,8 @@
 #' @param elements list of SAR objects.
 #' @export
 #' @examples  
-#' my.sar.set <- sarSet(c(my.sar.record1, my.sar.record2))
+#' data(kili)
+#' my.sar.set <- sarSet(c(master, slave))
 sarSet <- function(elements=c(), ...) {
     new('SARSet', elements, ...)
 }

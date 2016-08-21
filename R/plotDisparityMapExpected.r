@@ -15,7 +15,6 @@
 #' @param legend.lab title of the legend.
 #' @param asp aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
 #' @param ... graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.
-#' @export
 #' @seealso  \code{\link{disparity}}, \code{\link{angles}}, \code{\link{GeolocationPoints-class}}
 #' @examples
 #' data(kili)
@@ -37,7 +36,7 @@ setGeneric('plotDisparityMapExpected', function(object, slave, z='thetaIn',
     standardGeneric('plotDisparityMapExpected')
 })
 
-#' @export
+
 setMethod('plotDisparityMapExpected', 'SAR',
           function(object, slave=NULL, ...) {
               plotAnglesDif(object, slave, ...)
@@ -46,36 +45,37 @@ setMethod('plotDisparityMapExpected', 'SAR',
 
 #' @name plotDisparityMapExpected
 #' @rdname plotDisparityMapExpected
-#' @export
+
 setMethod('plotDisparityMapExpected', c('SAR', 'SAR'),
-          function(object, slave, z, xlab, ylab, h,
-                   breaks, col.regions, 
-                   cex, cex.axis, grid,
-                   variogram.fit, plot.fit, 
-                   plot.legend, pch, legend.lab, interpolate, aggregate.fact,
-                   xlim=c(min(object@extent@xmin, slave@extent@xmin),
-                          max(object@extent@xmax, slave@extent@xmax)),
-                   ylim=c(min(object@extent@ymin, slave@extent@ymin),
-                          max(object@extent@ymax, slave@extent@ymax)),
-                   asp=1/cos((mean(range(ylim)) * pi)/180), 
-                   zlim=c(min(disparityMap@data[,1]), 
-                          max(disparityMap@data[,1])),
+          function(object, slave, 
+                   # z, xlab, ylab, h,
+                   # breaks, col.regions, 
+                   # cex, cex.axis, grid,
+                   # variogram.fit, plot.fit, 
+                   # plot.legend, pch, legend.lab, interpolate, aggregate.fact,
+                   # xlim=c(min(object@extent@xmin, slave@extent@xmin),
+                   #        max(object@extent@xmax, slave@extent@xmax)),
+                   # ylim=c(min(object@extent@ymin, slave@extent@ymin),
+                   #        max(object@extent@ymax, slave@extent@ymax)),
+                   # asp=1/cos((mean(range(ylim)) * pi)/180), 
+                   # zlim=c(min(disparityMapExpected@data[,1]), 
+                   #        max(disparityMapExpected@data[,1])),
                    ...) {
               plotAnglesDif(master, slave,
-                            z, xlab, ylab,
-                            breaks, col.regions, 
-                            cex, cex.axis, grid,
-                            variogram.fit, plot.fit,
-                            plot.legend, pch, legend.lab,
-                            interpolate, aggregate.fact,
-                            disparity=T, h, 
+                            # z, xlab, ylab,
+                            # breaks, col.regions, 
+                            # cex, cex.axis, grid,
+                            # variogram.fit, plot.fit,
+                            # plot.legend, pch, legend.lab,
+                            # interpolate, aggregate.fact,
+                            # disparity=T, h, 
                             ...)
           }
 )
 
 #' @name plotDisparityMapExpected
 #' @rdname plotDisparityMapExpected
-#' @export
+
 setMethod('plotDisparityMapExpected', 'SARSet',
           function(object, slave=NULL, ...) {
               plotAnglesDif(master, slave,

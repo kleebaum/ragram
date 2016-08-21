@@ -8,19 +8,35 @@
 #' @param window.size Integer or vector of integers. Edge Length of quadratic window(s) to calculate \code{\link{zncc}}.
 #' Correlation coefficients are multiplied if a vector is provided.
 #' @param search.area.size Integer. Edge Length of quadratic search area in slave image.
-#' @param search.area.shift numeric vector. Pixels in x and y direction that the search area should be shifted.
+#' @param search.area.shift Numeric vector. Pixels in x and y direction that the search area should be shifted.
 #' That is how a priori knowledge about disparity can be regarded.
 #' @param resample.slave Logical. Should the slave image be resampled to the aggregated master image?
 #' @param run.parallel Logical. Run algorithm on more than one cores?
 #' @param cores Integer. How many cores should be allocated?
 #' @param log Logical. Log output to text file?
 #' @param log.file Character. Log file address and name.
-#' @return array giving disparities in x and y direction. The disparity is measured in pixel.
+#' @return Four dimensional array. The first and second dimension give rows and columns, respectively. 
+#' The third and forth dimension gives disparities in x and y direction. The disparity is measured in pixel.
 #' @export
 #' @seealso \code{\link{zncc}}, \code{\link{plotDisparityMap}}
 #' @examples
 #' data(kili)
-#' plotDisparityMap(master, slave)
+#' 
+#' master <- aggregate(master, 5)
+#' 
+#' disp.map <- disparityMap(master, slave, window.size=11, search.area.size=25)
+#' 
+#' disp.map.lon <- raster(disp.map[,,1])
+#' extent(disp.map.lon) <- extent(master)
+#' plot(disp.map.lon)
+#'
+#' disp.map.lat <- raster(disp.map[,,2])
+#' extent(disp.map.lat) <- extent(master)
+#' plot(disp.map.lat)
+#'
+#' disp.map.diagonal <- disp.map.lon
+#' values(disp.map.diagonal) <- sqrt(disp.map.lat[]^2 + disp.map.lon[]^2)
+#' plot(disp.map.diagonal)
 disparityMap <- function(master, slave, 
                          window.size=3, search.area.size=7,
                          search.area.shift=c(0,0),
@@ -86,7 +102,7 @@ disparityMap <- function(master, slave,
         cat('Started calculation of local disparity maps.\n')
         registerDoMC(cores)
         split.points.u <- floor(seq(u.buffer.border, (u.max+1), length.out=(cores+1)))
-        cat('Splitting points in horizontal image direction are at', split.points.u)
+        cat('Splitting points in vertical image direction are at (row numbers)', split.points.u)
         if(log) sink(log.file, append=F)
         
         disp.maps.local <- foreach(i=1:cores, .combine=function(...) abind(..., along=1))  %dopar% {
@@ -133,7 +149,7 @@ disparityMap <- function(master, slave,
         close(pb)
     }
     storage.mode(disp.map) <- 'numeric'
-    disp.map[,,1] <- disp.map[,,1] - search.area.shift[1]
-    disp.map[,,2] <- disp.map[,,2] - search.area.shift[2]
+    disp.map[,,1] <- disp.map[,,1] + search.area.shift[1]
+    disp.map[,,2] <- disp.map[,,2] + search.area.shift[2]
     return(disp.map)
 }

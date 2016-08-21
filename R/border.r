@@ -7,6 +7,7 @@
 #' @seealso \code{\link{plotBorder}}
 #' @examples
 #' data(kili)
+#' 
 #' border(master)
 #' plot(border(master))
 #' plotBorder(master)

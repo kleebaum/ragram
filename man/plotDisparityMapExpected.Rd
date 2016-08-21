@@ -12,14 +12,12 @@ plotDisparityMapExpected(object, slave, z = "thetaIn", xlab = "Longitude",
   pch = 20, legend.lab = "disparity [m]", interpolate = F,
   aggregate.fact = 100, ...)
 
-\S4method{plotDisparityMapExpected}{SAR,SAR}(object, slave, z, xlab, ylab, h,
-  breaks, col.regions, cex, cex.axis, grid, variogram.fit, plot.fit,
-  plot.legend, pch, legend.lab, interpolate, aggregate.fact,
-  xlim = c(min(object@extent@xmin, slave@extent@xmin), max(object@extent@xmax,
-  slave@extent@xmax)), ylim = c(min(object@extent@ymin, slave@extent@ymin),
-  max(object@extent@ymax, slave@extent@ymax)), asp = 1/cos((mean(range(ylim))
-  * pi)/180), zlim = c(min(disparityMap@data[, 1]), max(disparityMap@data[,
-  1])), ...)
+\S4method{plotDisparityMapExpected}{SAR,SAR}(object, slave, z = "thetaIn",
+  xlab = "Longitude", ylab = "Latitude", h = 1, breaks = 255,
+  col.regions = colorRampPalette(colors)(breaks), cex = 1, cex.axis = 1,
+  grid = T, variogram.fit = T, plot.fit = F, plot.legend = T,
+  pch = 20, legend.lab = "disparity [m]", interpolate = F,
+  aggregate.fact = 100, ...)
 
 \S4method{plotDisparityMapExpected}{SARSet,ANY}(object, slave, z = "thetaIn",
   xlab = "Longitude", ylab = "Latitude", h = 1, breaks = 255,

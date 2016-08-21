@@ -11,30 +11,32 @@ This class inherits from the \code{\link{SAR-class}}.
 \section{Slots}{
 
 \describe{
-\item{\code{address}}{address of the SAR data main folder.}
+\item{\code{address}}{Character. Address of the SAR data main folder.}
 
-\item{\code{polarization}}{polarization of the SAR record (e.g. VV or HH).}
+\item{\code{polarization}}{Character. Polarization of the SAR record (e.g. VV or HH).}
 
 \item{\code{geolocationPoints}}{\code{\link{GeolocationPoints-class}} object that contains GCPs/TPs.}
 
-\item{\code{node}}{direction of the satellite (ascending or descending).}
+\item{\code{node}}{Character. Direction of the satellite (ascending or descending).}
 
-\item{\code{orbit}}{orbit number (e.g. sentinel has 175 in total).}
+\item{\code{orbit}}{Integer. Orbit number (e.g. sentinel has 175 in total).}
 
-\item{\code{imgSubstring}}{character. This substring is searched for when image data is read.}
+\item{\code{imgSubstring}}{Character. This substring is searched for when image data is read.}
 }}
 \examples{
-# orbit 130, dual polarization vv and vh
-kili_2014_12_25_155516_vv <- new('Sentinel', warped=F, polarization='vv',
-                             address='sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/')
+# orbits 130 and 57
+master <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/')
+slave <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/')
 
 # alternatively
-sarRecord(address='sentinel1/kili/S1A_IW_GRDH_1SDV_20141225T155516_20141225T155541_003877_004A5A_2263.SAFE/',
-          satellite='sentinel-1', warped=F, polarization='vv')
-
-kili_2014_12_25_155516_vv@orbit
-kili_2014_12_25_155516_vv@polarization
-kili_2014_12_25_155516_vv@node
+master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+                    satellite = 'sentinel') 
+slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+                    satellite = 'sentinel')
+                    
+master@orbit
+master@polarization
+master@node
 }
 \seealso{
 \code{\link{SAR-class}}, \code{\link{GeolocationPoints-class}}, \code{\link{SARSet-class}}

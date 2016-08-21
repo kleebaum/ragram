@@ -14,6 +14,7 @@ Returns border provided by metadata as a \code{\link{SpatialPolygons}} object.
 }
 \examples{
 data(kili)
+
 border(master)
 plot(border(master))
 plotBorder(master)

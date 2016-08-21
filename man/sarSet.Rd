@@ -15,6 +15,7 @@ This is useful to identify stereo images.
 }
 \examples{
  
-my.sar.set <- sarSet(c(my.sar.record1, my.sar.record2))
+data(kili)
+my.sar.set <- sarSet(c(master, slave))
 }
 

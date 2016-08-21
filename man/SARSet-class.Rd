@@ -14,14 +14,15 @@ Objects of this class are lists.
 \item{\code{crs}}{\code{\link{CRS}} object}
 }}
 \examples{
-kiliSetAsc <- new('SARSet',
-              c(kili_2016_06_05_155520_vv_warped,  # 130
-              kili_2016_05_31_154724_vv_warped,    #  57
-              kili_2015_04_19_154656_vv_warped))   #  57 
+master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+                    satellite = 'sentinel') 
+slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+                    satellite = 'sentinel')
+
+kiliSetAsc <- new('SARSet', c(master, slave))
+              
 alternatively
-sarSet(c(kili_2016_06_05_155520_vv_warped,         # 130
-              kili_2016_05_31_154724_vv_warped,    #  57
-              kili_2015_04_19_154656_vv_warped))   #  57
+kiliSetAsc <- sarSet(c(master, slave))
 }
 \seealso{
 \code{\link{SAR-class}}

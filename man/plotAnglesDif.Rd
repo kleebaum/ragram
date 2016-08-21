@@ -28,40 +28,42 @@ plotAnglesDif(object, slave, z = "thetaIn", xlab = "Longitude",
   interpolate = F, aggregate.fact = 100, disparity = F, h = 100, ...)
 }
 \arguments{
-\item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+\item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{xlab}{title of the x axis.}
+\item{xlab}{Character. Title of the x axis.}
 
-\item{ylab}{title of the y axis.}
+\item{ylab}{Character. Title of the y axis.}
 
-\item{breaks}{number of breaks of the color ramp.}
+\item{breaks}{Integer. Number of breaks of the color ramp.}
 
-\item{col.regions}{color ramp.}
+\item{col.regions}{Color ramp.}
 
-\item{variogram.fit}{TRUE if a Gaussian variogram should be fitted.}
+\item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
-\item{plot.fit}{TRUE if the fitted variogram should be plotted.}
+\item{plot.legend}{Logical. Plot the legend?}
 
-\item{plot.legend}{TRUE if the legend is plotted.}
+\item{legend.lab}{Character. Title of the legend.}
 
-\item{legend.lab}{title of the legend.}
+\item{interpolate}{Logical. Interpolate angles?}
 
-\item{interpolate}{TRUE if angles should be interpolated.}
-
-\item{aggregate.fact}{integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+\item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
-See \code{\link{aggregate}} method of raster package. If aggregate.fact equals 1, no aggregation is done, 
-but then the interpolation might take a very long time...}
+See \code{\link{aggregate}} method of raster package. If no aggregation is done, 
+the interpolation might take a very long time...}
 
-\item{disparity}{logical. Should the expected disparity be plotted?}
+\item{disparity}{Logical. Should the expected disparity be plotted?}
 
-\item{h}{numeric. Relative height for plotting the expected disparity.}
+\item{h}{Numeric. Relative height for plotting the expected disparity.}
 
 \item{...}{graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.}
 
-\item{asp}{aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
+\item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
+
+\item{plot.fit.}{Logical. Plot the fitted variogram?}
+
+\item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
 }
 \description{
 Plots the difference in angles of two provided by GCPs/TPs as points.
@@ -75,6 +77,9 @@ plotAnglesDif(kili)
 
 plotAnglesDif(master, slave, interpolate=T)
 plot(anglesDif(master, slave, interpolate=T))
+
+plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
+legend.lab = 'Disparity [m]', h=100)
 }
 \seealso{
 \code{\link{anglesDif}}, \code{\link{angles}}, \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}

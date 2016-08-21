@@ -1,3 +1,4 @@
+#' @export
 setMethod('crop', 'SAR',
           function(x, y, ...) {
               rasterCropped=callNextMethod(x, y, ...)
