@@ -9,7 +9,7 @@ install_github('Kleebaum/ragram')
 
 ## Example usage
 
-# Load Sentinel-1 data of Kilimanjaro region
+### Load Sentinel-1 data of Kilimanjaro region
 ```
 master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/', satellite = 'sentinel') 
 slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/', satellite = 'sentinel')
@@ -17,14 +17,14 @@ slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/', satellite =
 data(kili)
 ```
 
-# Plot (google) maps
+### Plot (google) maps
 ```
 plotMap(kili, orbit = F)
 show(kili[[1]])
 plotGmap(kili[[1]])
 ```
 
-# Plot incidence angles
+### Plot incidence angles
 ```
 plotAngles(kili[[1]])
 plotAngles(kili[[5]])
@@ -38,13 +38,13 @@ plotOrbitNumber(kili[[1]], x=35.5)
 plotOrbitNumber(kili[[5]], x=37.8)
 ```
 
-# Plot expected disparity
+### Plot expected disparity
 ```
 plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
               legend.lab = 'Expected disparity [m]', h=100)
 ```
 
-# Inspect cropped Sentinel-1 same side stereo pair
+### Inspect cropped Sentinel-1 same side stereo pair
 ```
 plotGmap(master, xlim=c(37,37.7), ylim=c(-3.6,-2.8), sar=F)
 plot(spTransform(border(master), CRS('+init=epsg:4326')), 
@@ -53,14 +53,14 @@ plotSAR(master, maxpixels = 500000)
 plotSAR(slave, maxpixels = 500000)
 ```
 
-# Plot incidence angles and expected disparity
+### Plot incidence angles and expected disparity
 ```
 plotAngles(master, interpolate = T, aggregate.fact = 10)
 plotAngles(slave, interpolate = T, aggregate.fact = 10)
 plotAnglesDif(master, slave, interpolate = T, aggregate.fact = 10)
 ```
 
-# Calculate disparity map using zero normalied cross correlation (ZNCC)
+### Calculate disparity map using zero normalied cross correlation (ZNCC)
 ```
 master <- aggregate(master, 2)
 dispMap <- disparityMap(master, slave, window.size = 25,
