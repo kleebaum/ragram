@@ -10,7 +10,7 @@
 #' @param panel TRUE if text is added to a levelplot.
 #' @param ... parameters of \code{\link{text}} method.
 #' @export
-#' @seealso  \code{\link{plotMap}}, \code{\link{plotGmap}}, \code{\link{orbit}}
+#' @seealso  \code{\link{plotMap}}, \code{\link{plotGmap}}
 #' @examples
 #' plotOrbitNumber(kili_2014_12_25_155516_vv)
 #' plotOrbitNumber(kiliSet)

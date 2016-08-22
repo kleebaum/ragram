@@ -18,7 +18,7 @@
 #' @return Four dimensional array. The first and second dimension give rows and columns, respectively. 
 #' The third and forth dimension gives disparities in x and y direction. The disparity is measured in pixel.
 #' @export
-#' @seealso \code{\link{zncc}}, \code{\link{plotDisparityMap}}
+#' @seealso \code{\link{zncc}}
 #' @examples
 #' data(kili)
 #' 
@@ -33,10 +33,14 @@
 #' disp.map.lat <- raster(disp.map[,,2])
 #' extent(disp.map.lat) <- extent(master)
 #' plot(disp.map.lat)
-#'
+#'registerDoMC(cores)
 #' disp.map.diagonal <- disp.map.lon
 #' values(disp.map.diagonal) <- sqrt(disp.map.lat[]^2 + disp.map.lon[]^2)
 #' plot(disp.map.diagonal)
+#' 
+#' # to run parallel register cores first, e.g.:
+#' # library(doMC)
+#' # registerDoMC(4)
 disparityMap <- function(master, slave, 
                          window.size=3, search.area.size=7,
                          search.area.shift=c(0,0),
@@ -100,7 +104,7 @@ disparityMap <- function(master, slave,
     
     if(run.parallel) {
         cat('Started calculation of local disparity maps.\n')
-        registerDoMC(cores)
+        #registerDoMC(cores)
         split.points.u <- floor(seq(u.buffer.border, (u.max+1), length.out=(cores+1)))
         cat('Splitting points in vertical image direction are at (row numbers)', split.points.u)
         if(log) sink(log.file, append=F)

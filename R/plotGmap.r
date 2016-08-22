@@ -1,7 +1,7 @@
 #' Plot google earth map
 #' 
 #' Plots a google earth map that shows the location of SAR records. 
-#' Uses the \code{\link{gmap}} method of the dismo package.
+#' Uses the \code{\link[dismo]{gmap}} method of the dismo package.
 #'  
 #' @param object object of the \code{\link{SARSet-class}} 
 #' or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).

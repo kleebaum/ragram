@@ -10,7 +10,7 @@ setClass('SARGeneric',
 #' Geolocation points class
 #' 
 #' A class to handle geolocation control points (GCPs) and tie points (TPs).
-#' This class inherits from the \code{\link{SpatialPointsDataFrame}} class of the sp package.
+#' This class inherits from the \code{\link[sp]{SpatialPointsDataFrame}} class of the sp package.
 #'
 #' @export
 #' @seealso \code{\link{SpatialPointsDataFrame}}, \code{\link{SAR-class}}
@@ -20,7 +20,7 @@ setClass('GeolocationPoints',
 #' Synthetic aperture radar (SAR) class
 #' 
 #' A class to handle synthetic aperture radar (SAR) data.
-#' This class inherits from the \code{\link{RasterLayer}} class of the raster package.
+#' This class inherits from the \code{\link[raster]{RasterLayer}} class of the raster package.
 #'
 #' @slot address Character. Address of the SAR data main folder.
 #' @slot polarization Character. Polarization of the SAR record (e.g. VV or HH).
@@ -75,10 +75,10 @@ setClass('SAR',
 #' slave <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/')
 #'
 #' # alternatively
-#' master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#'                     satellite = 'sentinel') 
-#' slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-#'                     satellite = 'sentinel')
+#' # master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+#' #                    satellite = 'sentinel') 
+#' # slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+#' #                    satellite = 'sentinel')
 #'                     
 #' master@orbit
 #' master@polarization
@@ -125,7 +125,7 @@ setClass('TSX',
 #' A class to handle a collection of synthetic aperture radar (SAR) records.
 #' Objects of this class are lists.
 #'
-#' @slot crs \code{\link{CRS}} object
+#' @slot crs \code{\link[sp]{CRS}} object
 #' @export
 #' @seealso \code{\link{SAR-class}}
 #' @examples 

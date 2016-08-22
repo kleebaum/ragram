@@ -7,7 +7,7 @@ Author: Anja Kleebaum <anja.kleebaum@stmail.uni-bayreuth.de>,
 Maintainer: Anja Kleebaum <anja.kleebaum@stmail.uni-bayreuth.de>
 Description: R package to perform radargrammetry.
 Depends:
-    R (>= 3.0), sp, raster, gstat, XML, fields, abind, gdalUtils, foreach, doMC
+    R (>= 3.0), sp, raster, gstat, XML, fields, abind, gdalUtils, foreach
 Suggests: maps, dismo, GISTools
 Imports: Rcpp (>= 0.11.3)
 LinkingTo: Rcpp
