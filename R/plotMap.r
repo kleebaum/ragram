@@ -42,10 +42,10 @@ setGeneric('plotMap',
                    stop('Please load the `maps` package first')
                standardGeneric('plotMap')
                if(map.default.text) {
-                   #xlimMapCorner <<- xlim
-                   #ylimMapCorner <<- ylim
+                   xlimMapCorner <<- xlim
+                   ylimMapCorner <<- ylim
                    maps::map.text(database, regions, bg=rgb(1,1,1,0.3),
-                            xlim=xlim, ylim=ylim, 
+                            xlim=xlimMapCorner, ylim=ylimMapCorner, 
                             add=add, ...)
                } else {
                    maps::map(database, regions, bg=rgb(1,1,1,0.3),
