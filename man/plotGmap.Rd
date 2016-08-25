@@ -26,7 +26,7 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 
 \item{border}{color of the \code{\link{border}} of the SAR location.}
 
-\item{...}{graphical parameters of \code{\link{gmap}} method.}
+\item{...}{graphical parameters of \code{\link[dismo]{gmap}} method.}
 
 \item{asp}{aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
 }

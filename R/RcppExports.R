@@ -35,7 +35,6 @@ getAvgAndSDCpp <- function(img, u, v, n) {
 #' @param u2 Integer. Column, i.e. y coordinate of slave pixel.
 #' @param v2 Integer. Row, i.e. x coordinate of slave pixel.
 #' @param n Integer. (Window size-1)/2 in x direction.
-#' @param m Integer. (Window size-1)/2 in y direction.
 #' @export
 znccCpp <- function(master, slave, u1, v1, u2, v2, n) {
     .Call('ragram_zncc', PACKAGE = 'ragram', master, slave, u1, v1, u2, v2, n)

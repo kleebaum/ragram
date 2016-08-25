@@ -15,8 +15,10 @@ Objects of this class are lists.
 }}
 \examples{
 # orbits 130 and 57
-master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
-slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
+              package='ragram'))
+slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', 
+              package='ragram'))
 
 # alternatively
 master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
