@@ -26,6 +26,6 @@ Character. The destination file name.
 Projects SAR object using \code{\link{gdalwarp}}.
 }
 \examples{
-object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
+# object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
 }
 

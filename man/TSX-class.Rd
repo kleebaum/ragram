@@ -24,13 +24,12 @@ This class inherits from the \code{\link{SAR-class}}.
 \item{\code{imgSubstring}}{Character. This substring is searched for when image data is read.}
 }}
 \examples{
-tsx_kili_2016_07_03_154637_hh <- new('TSX',
-                                 address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
-
-# alternatively
+# tsx_kili_2016_07_03_154637_hh <- new('TSX',
+#                                  address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
+#
+## alternatively
 # sarRecord(address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637',
 #           satellite='terrasar-x')
-
 }
 \seealso{
 \code{\link{SAR-class}}, \code{\link{GeolocationPoints-class}}, \code{\link{SARSet-class}}

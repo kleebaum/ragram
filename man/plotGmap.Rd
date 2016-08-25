@@ -35,7 +35,8 @@ Plots a google earth map that shows the location of SAR records.
 Uses the \code{\link[dismo]{gmap}} method of the dismo package.
 }
 \examples{
-plotGmap(master)
+data(kili)
+
 plotGmap(kili)
 }
 \seealso{

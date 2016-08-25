@@ -17,7 +17,8 @@
 #' @export
 #' @seealso  \code{\link{plotMap}}, \code{\link{gmap}}, \code{\link{border}}, \code{\link{plotBorder}}
 #' @examples
-#' plotGmap(master)
+#' data(kili)
+#'
 #' plotGmap(kili)
 setGeneric('plotGmap',
            function(object,

@@ -12,8 +12,13 @@
 #' @export
 #' @seealso  \code{\link{plotMap}}, \code{\link{plotGmap}}
 #' @examples
-#' plotOrbitNumber(kili_2014_12_25_155516_vv)
-#' plotOrbitNumber(kiliSet)
+#' data(kili)
+#' 
+#' plotMap(kili[[1]], orbit=F)
+#' plotOrbitNumber(kili[[1]])
+#' 
+#' plotMap(kili, orbit=F)
+#' plotOrbitNumber(kili)
 setGeneric('plotOrbitNumber', 
            function(object, cex=1, col='black', panel=F, ...) {
                standardGeneric('plotOrbitNumber')

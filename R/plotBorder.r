@@ -9,9 +9,15 @@
 #' @seealso \code{\link{border}}
 #' @examples
 #' data(kili)
+#' 
 #' plotBorder(master)
-#' plotMap(slave)
-#' plotBorder(master, add=T)
+#' 
+#' plotMap(kili, sar=FALSE, orbit=FALSE)
+#' 
+#' plotBorder(kili[[1]], add=T)
+#' plotOrbitNumber(kili[[1]])
+#' plotBorder(kili[[2]], add=T)
+#' plotOrbitNumber(kili[[2]])
 setGeneric('plotBorder', 
            function(object, col=rgb(1,0,0,0.5), panel=F, ...) {
                standardGeneric('plotBorder')

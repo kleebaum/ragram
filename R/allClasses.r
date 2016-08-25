@@ -30,14 +30,14 @@ setClass('GeolocationPoints',
 #' @slot imgSubstring Character. This substring is searched for when image data is read. 
 #' @examples 
 #' # orbits 130 and 57
-#' master <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/')
-#' slave <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/')
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
 #'
 #' # alternatively
-#' # master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#' #                     satellite = 'sentinel') 
-#' # slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-#' #                    satellite = 'sentinel')
+#' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
+#'                     satellite = 'sentinel') 
+#' slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'),
+#'                    satellite = 'sentinel')
 #'                     
 #' master@orbit
 #' master@polarization
@@ -71,14 +71,14 @@ setClass('SAR',
 #' @export
 #' @examples 
 #' # orbits 130 and 57
-#' master <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/')
-#' slave <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/')
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
 #'
 #' # alternatively
-#' # master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#' #                    satellite = 'sentinel') 
-#' # slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-#' #                    satellite = 'sentinel')
+#' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
+#'                     satellite = 'sentinel') 
+#' slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'),
+#'                    satellite = 'sentinel')
 #'                     
 #' master@orbit
 #' master@polarization
@@ -107,13 +107,12 @@ setClass('Envisat',
 #' @slot imgSubstring Character. This substring is searched for when image data is read. 
 #' @export
 #' @examples 
-#' tsx_kili_2016_07_03_154637_hh <- new('TSX',
-#'                                  address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
-#'
-#' # alternatively
+#' # tsx_kili_2016_07_03_154637_hh <- new('TSX',
+#' #                                  address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
+#' #
+#' ## alternatively
 #' # sarRecord(address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637',
 #' #           satellite='terrasar-x')
-#' 
 #' @seealso \code{\link{SAR-class}}, \code{\link{GeolocationPoints-class}}, \code{\link{SARSet-class}}
 setClass('TSX',
          prototype = prototype(
@@ -129,14 +128,23 @@ setClass('TSX',
 #' @export
 #' @seealso \code{\link{SAR-class}}
 #' @examples 
-#' # master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#' #                     satellite = 'sentinel') 
-#' # slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-#' #                     satellite = 'sentinel')
+#' # orbits 130 and 57
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+#'
+#' # alternatively
+#' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
+#'                     satellite = 'sentinel') 
+#' slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'),
+#'                    satellite = 'sentinel')
+#'                     
+#' master@orbit
+#' master@polarization
+#' master@node
 #' 
 #' kiliSetAsc <- new('SARSet', c(master, slave))
 #'               
-#' alternatively
+#' # alternatively
 #' kiliSetAsc <- sarSet(c(master, slave))
 setClass('SARSet',
          representation = representation(

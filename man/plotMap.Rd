@@ -50,8 +50,9 @@ Uses the \code{\link[maps]{map}} method of the maps package.
 }
 \examples{
 data(kili)
-plotMap(master)
+
 plotMap(kili)
+plotMap(kili[[1]])
 }
 \seealso{
 \code{\link{plotGmap}}, \code{\link[maps]{map}}, \code{\link{border}}, \code{\link{plotBorder}}

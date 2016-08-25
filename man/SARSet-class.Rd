@@ -14,14 +14,23 @@ Objects of this class are lists.
 \item{\code{crs}}{\code{\link[sp]{CRS}} object}
 }}
 \examples{
-# master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#                     satellite = 'sentinel') 
-# slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-#                     satellite = 'sentinel')
+# orbits 130 and 57
+master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
+slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+
+# alternatively
+master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
+                    satellite = 'sentinel') 
+slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'),
+                   satellite = 'sentinel')
+                    
+master@orbit
+master@polarization
+master@node
 
 kiliSetAsc <- new('SARSet', c(master, slave))
               
-alternatively
+# alternatively
 kiliSetAsc <- sarSet(c(master, slave))
 }
 \seealso{

@@ -32,7 +32,7 @@
 #' plotAnglesDif(kili)
 #' 
 #' plotAnglesDif(master, slave, interpolate=T)
-#' plot(anglesDif(master, slave, interpolate=T))
+#' plot(anglesDif(master, slave, interpolate=T, aggregate.fact=100))
 #' 
 #' plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
 #' legend.lab = 'Disparity [m]', h=100)

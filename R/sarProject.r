@@ -9,7 +9,7 @@
 #' @return Character. The destination file name.
 #' @export
 #' @examples
-#' object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
+#' # object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
 setGeneric('sarProject', function(object, 
                                   suffix='-latlon',
                                   dstfile=paste0(sub('\\.[[:alnum:]]+$', '', as.character(object@file@name)),suffix,'.tiff'),

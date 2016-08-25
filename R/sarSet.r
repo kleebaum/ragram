@@ -7,7 +7,7 @@
 #' @export
 #' @examples  
 #' data(kili)
-#' my.sar.set <- sarSet(c(master, slave))
+#' my.sar.set <- sarSet(c(kili[[1]], kili[[2]]))
 sarSet <- function(elements=c(), ...) {
     new('SARSet', elements, ...)
 }

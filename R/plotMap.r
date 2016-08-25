@@ -24,8 +24,9 @@
 #' @seealso  \code{\link{plotGmap}}, \code{\link[maps]{map}}, \code{\link{border}}, \code{\link{plotBorder}}
 #' @examples
 #' data(kili)
-#' plotMap(master)
+#'
 #' plotMap(kili)
+#' plotMap(kili[[1]])
 setGeneric('plotMap', 
            function(object, database='world', regions='.',
                     xlim=c(-8,8)+mean(object@extent[1:2]),

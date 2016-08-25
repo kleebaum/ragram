@@ -18,9 +18,15 @@ Plots border provided by metadata as a \code{\link{SpatialPolygons}} object.
 }
 \examples{
 data(kili)
+
 plotBorder(master)
-plotMap(slave)
-plotBorder(master, add=T)
+
+plotMap(kili, sar=FALSE, orbit=FALSE)
+
+plotBorder(kili[[1]], add=T)
+plotOrbitNumber(kili[[1]])
+plotBorder(kili[[2]], add=T)
+plotOrbitNumber(kili[[2]])
 }
 \seealso{
 \code{\link{border}}
