@@ -24,6 +24,7 @@ setGeneric('plotOrbitNumber',
                standardGeneric('plotOrbitNumber')
 })
 
+#' @rdname plotOrbitNumber
 #' @export
 setMethod('plotOrbitNumber', 'SAR',
           function(object, cex=cex, col=col, panel,
@@ -40,6 +41,7 @@ setMethod('plotOrbitNumber', 'SAR',
               }
 })
 
+#' @rdname plotOrbitNumber
 #' @export
 setMethod('plotOrbitNumber', 'SARSet',
           function(object, ...) {

@@ -8,6 +8,7 @@
 #' @param ... Further arguments to \code{\link[sp]{spTransform}}.
 #' @seealso \code{\link{sarProject}}, \code{\link[sp]{spTransform}}, \code{\link[sp]{CRS-class}}
 #' @rdname spTransform
+#' @aliases spTransform spTransform-method
 #' @export 
 setMethod('spTransform', c('GeolocationPoints', 'CRS'),
           function(x, CRSobj, ...) {

@@ -54,11 +54,13 @@ setGeneric('plotGmap',
                standardGeneric('plotGmap')
            })
 
+#' @rdname plotGmap
 #' @export
 setMethod('plotGmap', signature('SAR'), function(object, ...) {
     print('GMap for single SAR object.')
 })
 
+#' @rdname plotGmap
 #' @export
 setMethod('plotGmap', signature('SARSet'), function(object, ...) {
     print('GMap for set of SAR objects.')

@@ -24,6 +24,7 @@ setGeneric('plotBorder',
                standardGeneric('plotBorder')
            })
 
+#' @rdname plotBorder
 #' @export
 setMethod('plotBorder', 'SAR',
           function(object, col=col, ...) {
@@ -36,6 +37,7 @@ setMethod('plotBorder', 'SAR',
               # }
           })
 
+#' @rdname plotBorder
 #' @export
 setMethod('plotBorder', 'SARSet',
           function(object, col=col, ...) {

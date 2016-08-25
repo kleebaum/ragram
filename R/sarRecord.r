@@ -4,12 +4,14 @@
 #' The input is either an existing raster or the folder address of satellite data.
 #' 
 #' @param object either a character given the folder address of satellite data or a RasterLayer object.
-#' @param satellite character. Either 'sentinel-1' or 'terrasar-x'.
-#' @param imgSubstring character. This substring is searched for when image data is read. 
-#' @param polarization. character. E.g.'vv' or 'hh'. 
+#' @param satellite Character. Either 'sentinel-1' or 'terrasar-x'.
+#' @param imgSubstring Character. This substring is searched for when image data is read. 
+#' @param polarization Character. E.g.'vv' or 'hh'. 
 #' If the polarization is not given it will be determined from metadata.
+#' @param ... Further arguments to the constructor of the \code{\link{SAR-class}} or a subclass.
 #' @return object of SAR class or subclass that is a well a RasterLayer object.
 #' @export
+#' @seealso \code{\link{SAR-class}}, \code{\link{Sentinel-class}}, \code{\link{TSX-class}}
 #' @examples 
 #' master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
 #'                     satellite = 'sentinel') 

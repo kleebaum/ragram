@@ -23,12 +23,14 @@ sarRecord(object, satellite = "", imgSubstring = "", polarization = NULL,
 \arguments{
 \item{object}{either a character given the folder address of satellite data or a RasterLayer object.}
 
-\item{satellite}{character. Either 'sentinel-1' or 'terrasar-x'.}
+\item{satellite}{Character. Either 'sentinel-1' or 'terrasar-x'.}
 
-\item{imgSubstring}{character. This substring is searched for when image data is read.}
+\item{imgSubstring}{Character. This substring is searched for when image data is read.}
 
-\item{polarization.}{character. E.g.'vv' or 'hh'. 
+\item{polarization}{Character. E.g.'vv' or 'hh'. 
 If the polarization is not given it will be determined from metadata.}
+
+\item{...}{Further arguments to the constructor of the \code{\link{SAR-class}} or a subclass.}
 }
 \value{
 object of SAR class or subclass that is a well a RasterLayer object.
@@ -42,5 +44,8 @@ master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
                     satellite = 'sentinel') 
 slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
                     satellite = 'sentinel')
+}
+\seealso{
+\code{\link{SAR-class}}, \code{\link{Sentinel-class}}, \code{\link{TSX-class}}
 }
 

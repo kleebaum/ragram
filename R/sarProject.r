@@ -1,11 +1,17 @@
 #' Project SAR object
 #' 
-#' Projects SAR object using \code{\link{gdalwarp}}.
+#' Projects SAR object using \code{\link[gdalUtils]{gdalwarp}}.
 #' 
 #' @param object SAR object or character giving the address of a raster (e.g. GeoTiff).
 #' @param suffix Character. This suffix is added to the image name in front of file extension.
 #' @param dstfile Character. The destination file name.
-#' @param ... Arguments of \code{\link{gdalwarp}}.
+#' @param of Character. Select the output format. The default is GeoTIFF (GTiff). Use the short format name.
+#' @param r Character. resampling_method. ("near"|"bilinear"|"cubic"|"cubicspline"|"lanczos"|"average"|"mode"|"max"|"min"|"med"|"q1"|"q3").
+#' @param t_srs Character. target spatial reference set. The coordinate systems that can be passed are anything supported by the OGRSpatialReference.SetFromUserInput() call, which includes EPSG PCS and GCSes (ie. EPSG:4296), PROJ.4 declarations (as above), or the name of a .prf file containing well known text.
+#' @param dstalpha Logical. Create an output alpha band to identify nodata (unset/transparent) pixels.
+#' @param dstnodata Character. Set nodata values for output bands.
+#' @param overwrite Logical. (GDAL >= 1.8.0) Overwrite the target dataset if it already exists.
+#' @param ... Arguments of \code{\link[gdalUtils]{gdalwarp}}.
 #' @return Character. The destination file name.
 #' @export
 #' @examples

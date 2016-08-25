@@ -42,10 +42,10 @@ setGeneric('plotMap',
                    stop('Please load the `maps` package first')
                standardGeneric('plotMap')
                if(map.default.text) {
-                   xlimMapCorner <<- xlim
-                   ylimMapCorner <<- ylim
+                   #xlimMapCorner <<- xlim
+                   #ylimMapCorner <<- ylim
                    maps::map.text(database, regions, bg=rgb(1,1,1,0.3),
-                            xlim=xlimMapCorner, ylim=ylimMapCorner, 
+                            xlim=xlim, ylim=ylim, 
                             add=add, ...)
                } else {
                    maps::map(database, regions, bg=rgb(1,1,1,0.3),
@@ -62,10 +62,14 @@ setGeneric('plotMap',
                    plotOrbitNumber(object, ...)
            })
 
+#' @rdname plotMap
+#' @export
 setMethod('plotMap', 'SAR', function(object, ...) {
     cat('Map for single SAR object.\n')
 })
 
+#' @rdname plotMap
+#' @export
 setMethod('plotMap', 'SARSet', function(object, ...) {
     cat('Map for set of SAR objects.\n')
 })

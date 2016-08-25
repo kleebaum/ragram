@@ -25,13 +25,25 @@ sarProject(object, suffix = "-latlon",
 
 \item{dstfile}{Character. The destination file name.}
 
-\item{...}{Arguments of \code{\link{gdalwarp}}.}
+\item{of}{Character. Select the output format. The default is GeoTIFF (GTiff). Use the short format name.}
+
+\item{r}{Character. resampling_method. ("near"|"bilinear"|"cubic"|"cubicspline"|"lanczos"|"average"|"mode"|"max"|"min"|"med"|"q1"|"q3").}
+
+\item{t_srs}{Character. target spatial reference set. The coordinate systems that can be passed are anything supported by the OGRSpatialReference.SetFromUserInput() call, which includes EPSG PCS and GCSes (ie. EPSG:4296), PROJ.4 declarations (as above), or the name of a .prf file containing well known text.}
+
+\item{dstalpha}{Logical. Create an output alpha band to identify nodata (unset/transparent) pixels.}
+
+\item{dstnodata}{Character. Set nodata values for output bands.}
+
+\item{overwrite}{Logical. (GDAL >= 1.8.0) Overwrite the target dataset if it already exists.}
+
+\item{...}{Arguments of \code{\link[gdalUtils]{gdalwarp}}.}
 }
 \value{
 Character. The destination file name.
 }
 \description{
-Projects SAR object using \code{\link{gdalwarp}}.
+Projects SAR object using \code{\link[gdalUtils]{gdalwarp}}.
 }
 \examples{
 # object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
