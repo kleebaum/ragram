@@ -20,7 +20,6 @@ setGeneric('anglesKriging', function(object, slave, z='thetaIn',
     standardGeneric('anglesKriging')
 })
 
-#' @name anglesKriging
 #' @rdname anglesKriging
 #' @export
 setMethod('anglesKriging', c('GeolocationPoints', 'SpatialPoints'),
@@ -50,7 +49,6 @@ setMethod('anglesKriging', c('GeolocationPoints', 'SpatialPoints'),
               return(kriging)
           })
 
-#' @name anglesKriging
 #' @rdname anglesKriging
 #' @export
 setMethod('anglesKriging', c('SAR', 'SAR'),
@@ -58,7 +56,6 @@ setMethod('anglesKriging', c('SAR', 'SAR'),
               anglesKriging(object@geolocationPoints, slave@geolocationPoints, ...)
           })
 
-#' @name anglesKriging
 #' @rdname anglesKriging
 #' @export
 setMethod('anglesKriging', c('SAR', 'SpatialPoints'),
@@ -66,7 +63,6 @@ setMethod('anglesKriging', c('SAR', 'SpatialPoints'),
               anglesKriging(object@geolocationPoints, slave, ...)
           })
 
-#' @name anglesKriging
 #' @rdname anglesKriging
 #' @export
 setMethod('anglesKriging', c('SpatialPointsDataFrame', 'SAR'),

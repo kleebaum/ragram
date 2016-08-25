@@ -3,6 +3,10 @@
 \docType{methods}
 \name{anglesKriging}
 \alias{anglesKriging}
+\alias{anglesKriging,GeolocationPoints,SpatialPoints-method}
+\alias{anglesKriging,SAR,SAR-method}
+\alias{anglesKriging,SAR,SpatialPoints-method}
+\alias{anglesKriging,SpatialPointsDataFrame,SAR-method}
 \title{Spatial interpolation of angles using kriging}
 \usage{
 anglesKriging(object, slave, z = "thetaIn", formula = as.formula(paste(z,

@@ -2,7 +2,12 @@
 % Please edit documentation in R/plot.r
 \docType{methods}
 \name{plotSAR}
+\alias{plot,SARSet,ANY-method}
 \alias{plotSAR}
+\alias{plotSAR,RasterLayer,ANY-method}
+\alias{plotSAR,SAR,ANY-method}
+\alias{plotSAR,SAR,SAR-method}
+\alias{plotSAR,SARSet,ANY-method}
 \title{Plot SAR record}
 \usage{
 plotSAR(object, slave = NULL, xlab = "Longitude", ylab = "Latitude",
@@ -49,6 +54,8 @@ plotSAR(object, slave = NULL, xlab = "Longitude", ylab = "Latitude",
   1)) - 1), north.arrow = F, north.arrow.pos = NULL,
   north.arrow.length = 0.05, scalebar = F, scalebar.pos = NULL,
   scalebar.col = "black", scalebar.d = 100, ...)
+
+\S4method{plot}{SARSet,ANY}(x, y = NULL, ...)
 }
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass 

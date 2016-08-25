@@ -45,7 +45,6 @@ setGeneric('plotAngles',
                standardGeneric('plotAngles')
            })
 
-#' @name plotAngles
 #' @rdname plotAngles
 #' @export
 setMethod('plotAngles', 'SpatialPointsDataFrame',
@@ -82,7 +81,6 @@ setMethod('plotAngles', 'SpatialPointsDataFrame',
               }
           })
 
-#' @name plotAngles
 #' @rdname plotAngles
 #' @export
 setMethod('plotAngles', 'SAR', 
@@ -116,7 +114,6 @@ setMethod('plotAngles', 'SAR',
               plot(border(object), add=T)
           })
 
-#' @name plotAngles
 #' @rdname plotAngles
 #' @export
 setMethod('plotAngles', 'SARSet',

@@ -36,6 +36,7 @@ setGeneric('anglesDif',
                standardGeneric('anglesDif')
            })
 
+#' @rdname anglesDif
 #' @export
 setMethod('anglesDif', 'SAR',
           function(object, slave=NULL, ...) {
@@ -43,6 +44,7 @@ setMethod('anglesDif', 'SAR',
               cat('Please provide a second SAR object or a SARSet object.')
           })
 
+#' @rdname anglesDif
 #' @export
 setMethod('anglesDif', c('SAR', 'SAR'),
           function(object, slave, ...) {
@@ -77,6 +79,7 @@ setMethod('anglesDif', c('SAR', 'SAR'),
               
           })
 
+#' @rdname anglesDif
 #' @export
 setMethod('anglesDif', 'SARSet',
           function(object, slave=NULL, ...) {

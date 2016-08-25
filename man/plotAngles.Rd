@@ -3,6 +3,9 @@
 \docType{methods}
 \name{plotAngles}
 \alias{plotAngles}
+\alias{plotAngles,SAR-method}
+\alias{plotAngles,SARSet-method}
+\alias{plotAngles,SpatialPointsDataFrame-method}
 \title{Plot angles}
 \usage{
 plotAngles(object, z = "thetaIn", xlab = "Longitude", ylab = "Latitude",

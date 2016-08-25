@@ -3,6 +3,8 @@
 \docType{methods}
 \name{geolocationPoints}
 \alias{geolocationPoints}
+\alias{geolocationPoints,SAR-method}
+\alias{geolocationPoints,SARSet-method}
 \title{Retrieve geolocation points}
 \usage{
 geolocationPoints(object, ...)

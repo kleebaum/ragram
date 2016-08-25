@@ -17,6 +17,8 @@ setGeneric('border',
                SpatialPolygons(polygons, proj4string = object@crs)
            })
 
+#' @rdname border
+#' @export
 setMethod('border', 'SAR', function(object, ...) {
     if(length(object@border@polygons)==0) {
         cornerCoords <- data.frame(object@cornerLon, object@cornerLat)
@@ -28,6 +30,8 @@ setMethod('border', 'SAR', function(object, ...) {
     }
 })
 
+#' @rdname border
+#' @export
 setMethod('border', 'SARSet', function(object, ...) {
     polygons <- list()
     for(i in 1:length(object)) {

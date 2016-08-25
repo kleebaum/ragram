@@ -3,6 +3,8 @@
 \docType{methods}
 \name{intersection}
 \alias{intersection}
+\alias{intersection,SAR,ANY-method}
+\alias{intersection,SAR,SAR-method}
 \title{Intersection area between two SAR records}
 \usage{
 intersection(object, slave, ...)

@@ -76,7 +76,6 @@ setGeneric('plotSAR',
                }
            })
 
-#' @name plotSAR
 #' @rdname plotSAR
 #' @export
 setMethod('plotSAR', 'SAR',
@@ -104,7 +103,6 @@ setMethod('plotSAR', 'SAR',
                     legend=F, ...)
           })
 
-#' @name plotSAR
 #' @rdname plotSAR
 #' @export
 setMethod('plotSAR', 'RasterLayer',
@@ -119,7 +117,6 @@ setMethod('plotSAR', 'RasterLayer',
                       ...)
           })
 
-#' @name plotSAR
 #' @rdname plotSAR
 #' @export
 setMethod('plotSAR', c('SAR', 'SAR'),
@@ -154,7 +151,6 @@ setMethod('plotSAR', c('SAR', 'SAR'),
               
           })
 
-#' @name plotSAR
 #' @rdname plotSAR
 #' @export
 setMethod('plotSAR', 'SARSet',
@@ -208,6 +204,7 @@ removeFlipping <- function(object, ...) {
     return(object)
 }
 
+#' @rdname plotSAR
 #' @export
 setMethod('plot', c('SARSet', 'ANY'),
           function(x, y=NULL, ...) {

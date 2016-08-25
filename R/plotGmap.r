@@ -40,7 +40,7 @@ setGeneric('plotGmap',
                        map.default.text = F, sar=F, orbit=F, ...)
                e <- extent(xlim[1], xlim[2],
                            ylim[1], ylim[2])
-               tryCatch(plot(gmap(e, lonlat = T, type='satellite', scale=scale), 
+               tryCatch(plot(dismo::gmap(e, lonlat = T, type='satellite', scale=scale), 
                              inter=T, 
                              xlim=xlim, ylim=ylim, add=T, ...),
                         error=function(error) {

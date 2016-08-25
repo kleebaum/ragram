@@ -21,7 +21,6 @@ setGeneric('geolocationPoints',
                standardGeneric('geolocationPoints')
            })
 
-#' @name geolocationPoints
 #' @rdname geolocationPoints
 #' @export
 setMethod('geolocationPoints', 'SAR',
@@ -29,7 +28,6 @@ setMethod('geolocationPoints', 'SAR',
               object@geolocationPoints
           })
 
-#' @name geolocationPoints
 #' @rdname geolocationPoints
 #' @export
 setMethod('geolocationPoints', 'SARSet',

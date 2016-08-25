@@ -18,7 +18,6 @@ setGeneric('coordsToMeter', function(coords=c(0,0,0,0)) {
     return(c(m.lon, m.lat))
 })
 
-#' @name coordsToMeter
 #' @rdname coordsToMeter
 #' @export
 setMethod('coordsToMeter', c('numeric'),
@@ -26,7 +25,6 @@ setMethod('coordsToMeter', c('numeric'),
               return(coords)
           })
 
-#' @name coordsToMeter
 #' @rdname coordsToMeter
 #' @export
 setMethod('coordsToMeter', c('Extent'),

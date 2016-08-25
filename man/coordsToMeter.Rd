@@ -3,6 +3,8 @@
 \docType{methods}
 \name{coordsToMeter}
 \alias{coordsToMeter}
+\alias{coordsToMeter,Extent-method}
+\alias{coordsToMeter,numeric-method}
 \title{Convert coordinates to meter}
 \usage{
 coordsToMeter(coords = c(0, 0, 0, 0))

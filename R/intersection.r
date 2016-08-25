@@ -11,15 +11,15 @@ setGeneric('intersection',
                standardGeneric('intersection')
            })
 
-#' @name intersection
 #' @rdname intersection
+#' @export
 setMethod('intersection', 'SAR', 
           function(object, ...) {
               border(object)
           })
 
-#' @name intersection
 #' @rdname intersection
+#' @export
 setMethod('intersection', c('SAR', 'SAR'),
           function(object, slave, ...) {
               intersect(border(object), border(slave))
