@@ -3,10 +3,20 @@
 \docType{methods}
 \name{plotAnglesDif}
 \alias{plotAnglesDif}
+\alias{plotAnglesDif,SAR,ANY-method}
+\alias{plotAnglesDif,SAR,SAR-method}
+\alias{plotAnglesDif,SARSet,ANY-method}
 \title{Plot differences of two SAR records}
 \usage{
 plotAnglesDif(object, slave, z = "thetaIn", xlab = "Longitude",
   ylab = "Latitude", breaks = 255,
+  col.regions = colorRampPalette(colors)(breaks), cex = 1, cex.axis = 1,
+  grid = T, variogram.fit = T, plot.fit = F, plot.legend = T,
+  pch = 20, legend.lab = expression(paste(Delta, theta[i], " [deg]")),
+  interpolate = F, aggregate.fact = 100, disparity = F, h = 100, ...)
+
+\S4method{plotAnglesDif}{SAR,ANY}(object, slave, z = "thetaIn",
+  xlab = "Longitude", ylab = "Latitude", breaks = 255,
   col.regions = colorRampPalette(colors)(breaks), cex = 1, cex.axis = 1,
   grid = T, variogram.fit = T, plot.fit = F, plot.legend = T,
   pch = 20, legend.lab = expression(paste(Delta, theta[i], " [deg]")),

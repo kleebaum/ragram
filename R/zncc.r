@@ -16,12 +16,14 @@ setGeneric('zncc', function(master, slave, u1, v1, u2, v2, n=3, m=n) {
     standardGeneric('zncc')
 })
 
+#' @rdname zncc
 #' @export
 setMethod('zncc', c('RasterLayer', 'RasterLayer'), 
           function(master, slave, u1, v1, u2, v2, n=3, m=n) {
               cor(master[(u1-n):(u1+n), (v1-m):(v1+m)], slave[(u2-n):(u2+n), (v2-m):(v2+m)])
           })
 
+#' @rdname zncc
 #' @export
 setMethod('zncc', c('matrix', 'matrix'), 
           function(master, slave, u1, v1, u2, v2, n=3, m=n) {

@@ -44,17 +44,17 @@ setGeneric('plotMap',
                if(map.default.text) {
                    xlimMapCorner <<- xlim
                    ylimMapCorner <<- ylim
-                   map.text(database, regions, bg=rgb(1,1,1,0.3),
+                   maps::map.text(database, regions, bg=rgb(1,1,1,0.3),
                             xlim=xlimMapCorner, ylim=ylimMapCorner, 
                             add=add, ...)
                } else {
-                   map(database, regions, bg=rgb(1,1,1,0.3),
+                   maps::map(database, regions, bg=rgb(1,1,1,0.3),
                        xlim=xlim, ylim=ylim, add=add, ...) 
                }
                if(!is.null(labels.x)) {
                    text(x=labels.x, y=labels.y, labels=labels, ...)
                }
-               map.axes(...)
+               maps::map.axes(...)
                title('', xlab=xlab, ylab=ylab, main=main, ...)
                if(sar) 
                    plotBorder(object, col=col, add=T, ...)

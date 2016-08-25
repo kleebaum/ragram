@@ -34,11 +34,13 @@ angles(object, z = "thetaIn", interpolate = F, variogram.fit = T,
 
 \item{plot.fit}{Logical. Plot the fitted variogram?}
 
+\item{aggregate}{Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.}
+
 \item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 See \code{\link{aggregate}} method of raster package.}
 
-\item{aggregate.}{Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.}
+\item{...}{Further arguments (ignored).}
 }
 \value{
 \code{\link{SpatialPointsDataFrame}}

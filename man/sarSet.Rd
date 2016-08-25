@@ -8,6 +8,8 @@ sarSet(elements = c(), ...)
 }
 \arguments{
 \item{elements}{list of SAR objects.}
+
+\item{...}{Further arguments to the constructor of the \code{\link{SARSet-class}}.}
 }
 \description{
 Creates a set of synthetic aperture radar (SAR) images. 
@@ -17,5 +19,8 @@ This is useful to identify stereo images.
  
 data(kili)
 my.sar.set <- sarSet(c(kili[[1]], kili[[2]]))
+}
+\seealso{
+\code{\link{SARSet-class}}
 }
 

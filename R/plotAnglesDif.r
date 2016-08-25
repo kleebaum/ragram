@@ -50,6 +50,7 @@ setGeneric('plotAnglesDif', function(object, slave, z='thetaIn',
     standardGeneric('plotAnglesDif')
 })
 
+#' @rdname plotAnglesDif
 #' @export
 setMethod('plotAnglesDif', 'SAR',
           function(object, slave=NULL, ...) {
@@ -58,7 +59,6 @@ setMethod('plotAnglesDif', 'SAR',
           }
 )
 
-#' @name plotAnglesDif
 #' @rdname plotAnglesDif
 #' @export
 setMethod('plotAnglesDif', c('SAR', 'SAR'),
@@ -111,7 +111,6 @@ setMethod('plotAnglesDif', c('SAR', 'SAR'),
           }
 )
 
-#' @name plotAnglesDif
 #' @rdname plotAnglesDif
 #' @export
 setMethod('plotAnglesDif', 'SARSet',
@@ -135,39 +134,39 @@ setMethod('plotAnglesDif', 'SARSet',
               }
           })
 
-levelplotAnglesDif <- function(object, slave, z='thetaIn',
-                               xlab='Longitude', ylab='Latitude', 
-                               col.regions=colorRampPalette(colors)(255), 
-                               round.digits=2, cex=1, cex.axis=1, 
-                               variogram.fit=T, plot.fit=T, 
-                               interpolate, aggregate.fact=100,
-                               useRaster=T, 
-                               xlim=c(min(object@extent@xmin, slave@extent@xmin),
-                                      max(object@extent@xmax, slave@extent@xmax)),
-                               ylim=c(min(object@extent@ymin, slave@extent@ymin),
-                                      max(object@extent@ymax, slave@extent@ymax)),
-                               asp=1/cos((mean(range(ylim)) * pi)/180), ...) {
-    angleDif <- anglesDif(object, slave, z, variogram.fit, plot.fit,
-                          interpolate, aggregate.fact)
-    levelplot(angleDif@data[,1] ~
-                  round(angleDif@coords[,1], round.digits)*
-                  round(angleDif@coords[,2], round.digits),
-              xlab=list(xlab, cex=cex), ylab=list(ylab, cex=cex),
-              scales=list(x=list(cex=cex.axis),
-                          y=list(cex=cex.axis, rot=90), cex=cex.axis,
-                          tck = c(1,0)),
-              xlim=xlim,
-              ylim=ylim,
-              asp=asp,
-              colorkey = list(labels=list(cex=cex.axis)),
-              col.regions=col.regions,
-              panel=function(...) {
-                  if(useRaster)
-                      panel.levelplot.raster(...)
-                  else
-                      panel.levelplot(...)
-                  plotBorder(slave, panel = T)
-                  plotBorder(object, panel = T)
-              }, ...
-    )
-}
+# levelplotAnglesDif <- function(object, slave, z='thetaIn',
+#                                xlab='Longitude', ylab='Latitude', 
+#                                col.regions=colorRampPalette(colors)(255), 
+#                                round.digits=2, cex=1, cex.axis=1, 
+#                                variogram.fit=T, plot.fit=T, 
+#                                interpolate, aggregate.fact=100,
+#                                useRaster=T, 
+#                                xlim=c(min(object@extent@xmin, slave@extent@xmin),
+#                                       max(object@extent@xmax, slave@extent@xmax)),
+#                                ylim=c(min(object@extent@ymin, slave@extent@ymin),
+#                                       max(object@extent@ymax, slave@extent@ymax)),
+#                                asp=1/cos((mean(range(ylim)) * pi)/180), ...) {
+#     angleDif <- anglesDif(object, slave, z, variogram.fit, plot.fit,
+#                           interpolate, aggregate.fact)
+#     levelplot(angleDif@data[,1] ~
+#                   round(angleDif@coords[,1], round.digits)*
+#                   round(angleDif@coords[,2], round.digits),
+#               xlab=list(xlab, cex=cex), ylab=list(ylab, cex=cex),
+#               scales=list(x=list(cex=cex.axis),
+#                           y=list(cex=cex.axis, rot=90), cex=cex.axis,
+#                           tck = c(1,0)),
+#               xlim=xlim,
+#               ylim=ylim,
+#               asp=asp,
+#               colorkey = list(labels=list(cex=cex.axis)),
+#               col.regions=col.regions,
+#               panel=function(...) {
+#                   if(useRaster)
+#                       panel.levelplot.raster(...)
+#                   else
+#                       panel.levelplot(...)
+#                   plotBorder(slave, panel = T)
+#                   plotBorder(object, panel = T)
+#               }, ...
+#     )
+# }

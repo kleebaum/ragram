@@ -11,7 +11,7 @@ Objects of this class are lists.
 \section{Slots}{
 
 \describe{
-\item{\code{crs}}{\code{\link[sp]{CRS}} object}
+\item{\code{crs}}{\code{\link[sp]{CRS-class}} object}
 }}
 \examples{
 # orbits 130 and 57

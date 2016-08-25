@@ -20,18 +20,21 @@ setGeneric('sarRecord', function(object, satellite='', imgSubstring='',
     standardGeneric('sarRecord')
 })
 
+#' @rdname sarRecord
 #' @export
 setMethod('sarRecord', 'RasterLayer', function(object, ...) {
     sarRecordDecision(address='', raster=object, satellite=satellite, 
                       imgSubstring=imgSubstring, polarization=polarization, ...)
 })
 
+#' @rdname sarRecord
 #' @export
 setMethod('sarRecord', 'character', function(object, ...) {
         sarRecordDecision(address=object, raster=NULL, satellite=satellite, 
                           imgSubstring=imgSubstring, polarization=polarization, ...)
 })
 
+#' @rdname sarRecord
 #' @export
 setMethod('sarRecord', 'missing', function(...) {
     sarRecordDecision(address='', raster=NULL, satellite=satellite, 

@@ -4,14 +4,12 @@
 \alias{plotBorder}
 \title{Plot border}
 \usage{
-plotBorder(object, col = rgb(1, 0, 0, 0.5), panel = F, ...)
+plotBorder(object, col = rgb(1, 0, 0, 0.5), ...)
 }
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
 \item{col}{color within the recorded area.}
-
-\item{panel}{TRUE if the border should be plotted on a lattice plot (e.g. levelplot).}
 }
 \description{
 Plots border provided by metadata as a \code{\link{SpatialPolygons}} object.

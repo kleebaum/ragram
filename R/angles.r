@@ -7,10 +7,11 @@
 #' @param variogram.fit Logical. Fit a Gaussian variogram?
 #' @param plot.fit Logical. Plot the fitted variogram?
 #' @param interpolate Logical. Interpolate angles?
-#' @param aggregate. Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.
+#' @param aggregate Logical. Should the raster be aggregated? If no aggregation is done the interpolation might take a very long time.
 #' @param aggregate.fact Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 #' Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 #' See \code{\link{aggregate}} method of raster package.
+#' @param ... Further arguments (ignored).
 #' @return \code{\link{SpatialPointsDataFrame}}
 #' @rdname angles
 #' @export

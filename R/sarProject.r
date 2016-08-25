@@ -31,6 +31,8 @@ setGeneric('sarProject', function(object,
     return(dstfile)
 })
 
+#' @rdname sarProject
+#' @export
 setMethod('sarProject', 'SAR', function(object, ...) {
     return(object@file@name)
 })

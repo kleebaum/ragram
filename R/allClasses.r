@@ -130,7 +130,7 @@ setClass('TSX',
 #' A class to handle a collection of synthetic aperture radar (SAR) records.
 #' Objects of this class are lists.
 #'
-#' @slot crs \code{\link[sp]{CRS}} object
+#' @slot crs \code{\link[sp]{CRS-class}} object
 #' @export
 #' @seealso \code{\link{SAR-class}}
 #' @examples 
