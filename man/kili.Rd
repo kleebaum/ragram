@@ -10,8 +10,8 @@ Three Sentinel-1 orbits pass this area, i.e., the descending orbit 79 and the as
     # plotMap(kili)
     # plotGmap(kili)
     
-    # master <- kili@elements[[1]] # ascending orbit 130
-    # slave <- kili@elements[[2]]  # ascending orbit 57
+    # master <- kili[[1]] # ascending orbit 130
+    # slave <- kili[[2]]  # ascending orbit 57
     
     # angles(master)
     # anglesDif(master, slave)

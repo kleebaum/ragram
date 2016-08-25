@@ -14,9 +14,9 @@ plotMap(object, database = "world", regions = ".", xlim = c(-8, 8) +
 \item{object}{object of the \code{\link{SARSet-class}} 
 or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{database}{character string naming a geographical database (see \code{\link{map}}).}
+\item{database}{character string naming a geographical database (see \code{\link[maps]{map}}).}
 
-\item{regions}{character vector that names the polygons to draw (see \code{\link{map}}).}
+\item{regions}{character vector that names the polygons to draw (see \code{\link[maps]{map}}).}
 
 \item{xlim}{the x limits (x1, x2) of the plot.}
 
@@ -26,7 +26,7 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 
 \item{ylab}{title of the y axis.}
 
-\item{map.default.text}{TRUE if default text is plotted using the \code{\link{map.text}} method.}
+\item{map.default.text}{TRUE if default text is plotted using the \code{\link[maps]{map.text}} method.}
 
 \item{sar}{TRUE if location should be plotted.}
 
@@ -40,13 +40,13 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 
 \item{orbit}{TRUE if orbit number is plotted}
 
-\item{...}{graphical parameters of \code{\link{gmap}} method.}
+\item{...}{graphical parameters of \code{\link[maps]{map}} method.}
 
 \item{border}{color of the \code{\link{border}} of the SAR location.}
 }
 \description{
 Plots a map that shows the location of SAR records.
-Uses the \code{\link{map}} method of the maps package.
+Uses the \code{\link[maps]{map}} method of the maps package.
 }
 \examples{
 data(kili)
@@ -54,6 +54,6 @@ plotMap(master)
 plotMap(kili)
 }
 \seealso{
-\code{\link{plotGmap}}, \code{\link{map}}, \code{\link{border}}, \code{\link{plotBorder}}
+\code{\link{plotGmap}}, \code{\link[maps]{map}}, \code{\link{border}}, \code{\link{plotBorder}}
 }
 

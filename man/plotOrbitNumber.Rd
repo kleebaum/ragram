@@ -28,6 +28,6 @@ plotOrbitNumber(kili_2014_12_25_155516_vv)
 plotOrbitNumber(kiliSet)
 }
 \seealso{
-\code{\link{plotMap}}, \code{\link{plotGmap}}, \code{\link{orbit}}
+\code{\link{plotMap}}, \code{\link{plotGmap}}
 }
 

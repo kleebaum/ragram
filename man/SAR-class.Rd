@@ -6,7 +6,7 @@
 \title{Synthetic aperture radar (SAR) class}
 \description{
 A class to handle synthetic aperture radar (SAR) data.
-This class inherits from the \code{\link{RasterLayer}} class of the raster package.
+This class inherits from the \code{\link[raster]{RasterLayer}} class of the raster package.
 }
 \section{Slots}{
 
@@ -29,10 +29,10 @@ master <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE
 slave <- new('Sentinel', address='extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/')
 
 # alternatively
-master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-                    satellite = 'sentinel') 
-slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
-                    satellite = 'sentinel')
+# master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
+#                     satellite = 'sentinel') 
+# slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
+#                    satellite = 'sentinel')
                     
 master@orbit
 master@polarization

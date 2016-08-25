@@ -54,12 +54,16 @@ plot(disp.map.lon)
 disp.map.lat <- raster(disp.map[,,2])
 extent(disp.map.lat) <- extent(master)
 plot(disp.map.lat)
-
+registerDoMC(cores)
 disp.map.diagonal <- disp.map.lon
 values(disp.map.diagonal) <- sqrt(disp.map.lat[]^2 + disp.map.lon[]^2)
 plot(disp.map.diagonal)
+
+# to run parallel register cores first, e.g.:
+# library(doMC)
+# registerDoMC(4)
 }
 \seealso{
-\code{\link{zncc}}, \code{\link{plotDisparityMap}}
+\code{\link{zncc}}
 }
 

@@ -20,6 +20,6 @@ intersection(object, slave, ...)
 \code{\link{SpatialPolygon}}
 }
 \description{
-Returns the intersection of borders (provided by metadata) as a \code{\link{SpatialPolygon}} object.
+Returns the intersection of borders (provided by metadata) as a \code{\link[sp]{SpatialPolygon}} object.
 }
 
