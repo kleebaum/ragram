@@ -30,13 +30,17 @@ setClass('GeolocationPoints',
 #' @slot imgSubstring Character. This substring is searched for when image data is read. 
 #' @examples 
 #' # orbits 130 and 57
-#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
-#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
+#'               package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', 
+#'               package='ragram'))
 #'
 #' # alternatively
-#' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
+#' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
+#'                     package='ragram'),
 #'                     satellite = 'sentinel') 
-#' slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'),
+#' slave <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', 
+#'                    package='ragram'),
 #'                    satellite = 'sentinel')
 #'                     
 #' master@orbit
@@ -71,8 +75,10 @@ setClass('SAR',
 #' @export
 #' @examples 
 #' # orbits 130 and 57
-#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
-#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
+#'               package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', 
+#'               package='ragram'))
 #'
 #' # alternatively
 #' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),
@@ -108,10 +114,10 @@ setClass('Envisat',
 #' @export
 #' @examples 
 #' # tsx_kili_2016_07_03_154637_hh <- new('TSX',
-#' #                                  address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
+#' # address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637')
 #' #
 #' ## alternatively
-#' # sarRecord(address='terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637',
+#' # sarRecord('terrasarx/kili/TSX1_SAR__MGD_SE___HS_S_SRA_20160703T154637_20160703T154637',
 #' #           satellite='terrasar-x')
 #' @seealso \code{\link{SAR-class}}, \code{\link{GeolocationPoints-class}}, \code{\link{SARSet-class}}
 setClass('TSX',
@@ -129,8 +135,10 @@ setClass('TSX',
 #' @seealso \code{\link{SAR-class}}
 #' @examples 
 #' # orbits 130 and 57
-#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'))
-#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', package='ragram'))
+#' master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
+#'               package='ragram'))
+#' slave <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE', 
+#'               package='ragram'))
 #'
 #' # alternatively
 #' master <- sarRecord(system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', package='ragram'),

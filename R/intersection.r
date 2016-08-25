@@ -1,6 +1,6 @@
 #' Intersection area between two SAR records
 #' 
-#' Returns the intersection of borders (provided by metadata) as a \code{\link[sp]{SpatialPolygon}} object.
+#' Returns the intersection of borders (provided by metadata) as a \code{\link[sp]{SpatialPolygons}} object.
 #' 
 #' @param object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).

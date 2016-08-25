@@ -13,7 +13,7 @@
 #' @param sar TRUE if location should be plotted.
 #' @param asp aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
 #' @param border color of the \code{\link{border}} of the SAR location.
-#' @param ... graphical parameters of \code{\link{gmap}} method.
+#' @param ... graphical parameters of \code{\link[dismo]{gmap}} method.
 #' @export
 #' @seealso  \code{\link{plotMap}}, \code{\link[dismo]{gmap}}, \code{\link{border}}, \code{\link{plotBorder}}
 #' @examples
