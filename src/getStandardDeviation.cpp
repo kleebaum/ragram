@@ -1,7 +1,7 @@
 #include <Rcpp.h>
 #include <math.h>
 using namespace Rcpp;
-#include "ragram.hpp"
+#include "ragram.h"
 
 // [[Rcpp::export(name = 'getStandardDeviationCpp')]]
 double getStandardDeviation(NumericMatrix img, int u, int v, int n) {

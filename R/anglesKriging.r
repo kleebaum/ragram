@@ -1,14 +1,15 @@
 #' Spatial interpolation of angles using kriging
 #' 
 #' Angles provided by GCPs/TPs are known.
-#' Returns interpolated angles as a \code{\link{SpatialPointsDataFrame}} object.
+#' Returns interpolated angles as a \code{\link[sp]{SpatialPointsDataFrame}} object.
 #'  
-#' @param object Object of class \code{\link{SpatialPointsDataFrame}}.
-#' @param spatialPoints Object of \code{\link{SpatialPoints}} class.
+#' @param object Object of class \code{\link[sp]{SpatialPointsDataFrame}}.
+#' @param slave Either an object of \code{\link{SAR-class}} or \code{\link[sp]{SpatialPoints}} class.
 #' @param z Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.
-#' @param formula Formula used for kriging (see \code{\link{krige}} of gstat package).
+#' @param formula Formula used for kriging (see \code{\link[gstat]{krige}} of gstat package).
 #' @param variogram.fit Logical. Fit a Gaussian variogram?
 #' @param plot.fit Logical. Plot the fitted variogram?
+#' @param ... Further arguments (ignored).
 #' @export
 #' @seealso \code{\link{angles}}, \code{\link{anglesDif}}, \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 #' @examples

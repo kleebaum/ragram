@@ -39,6 +39,8 @@ anglesDif(object, slave = NULL, z = "thetaIn", variogram.fit = T,
 \item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 See \code{\link{aggregate}} method of raster package.}
+
+\item{...}{Further arguments (ignored).}
 }
 \value{
 \code{\link{SpatialPointsDataFrame}}

@@ -43,6 +43,10 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 
 \item{ylab}{title of the y axis.}
 
+\item{main}{Character. Title.}
+
+\item{add}{Logical. Add the map to a current plot?}
+
 \item{map.default.text}{TRUE if default text is plotted using the \code{\link[maps]{map.text}} method.}
 
 \item{sar}{TRUE if location should be plotted.}
@@ -58,8 +62,6 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 \item{orbit}{TRUE if orbit number is plotted}
 
 \item{...}{graphical parameters of \code{\link[maps]{map}} method.}
-
-\item{border}{color of the \code{\link{border}} of the SAR location.}
 }
 \description{
 Plots a map that shows the location of SAR records.

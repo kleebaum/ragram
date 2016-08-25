@@ -17,6 +17,8 @@ plotBorder(object, col = rgb(1, 0, 0, 0.5), ...)
 \item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
 \item{col}{color within the recorded area.}
+
+\item{...}{Further arguments to \code{\link[graphics]{plot}}.}
 }
 \description{
 Plots border provided by metadata as a \code{\link{SpatialPolygons}} object.

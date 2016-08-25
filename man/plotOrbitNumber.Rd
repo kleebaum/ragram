@@ -7,19 +7,20 @@
 \alias{plotOrbitNumber,SARSet-method}
 \title{Plot orbit number}
 \usage{
-plotOrbitNumber(object, cex = 1, col = "black", panel = F, ...)
+plotOrbitNumber(object, cex = 1, col = "black", ...)
 
-\S4method{plotOrbitNumber}{SAR}(object, cex = cex, col = col, panel,
+\S4method{plotOrbitNumber}{SAR}(object, cex = cex, col = col,
   x = object@centerLon, y = object@centerLat, labels = object@orbit, ...)
 
-\S4method{plotOrbitNumber}{SARSet}(object, cex = 1, col = "black",
-  panel = F, ...)
+\S4method{plotOrbitNumber}{SARSet}(object, cex = 1, col = "black", ...)
 }
 \arguments{
 \item{object}{object of the \code{\link{SARSet-class}} 
 or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{panel}{TRUE if text is added to a levelplot.}
+\item{cex}{Text size (see \code{[graphics]\link{par}}).}
+
+\item{col}{Plotting color (see \code{[graphics]\link{par}}).}
 
 \item{...}{parameters of \code{\link{text}} method.}
 

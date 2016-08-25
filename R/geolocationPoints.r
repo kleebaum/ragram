@@ -17,20 +17,20 @@
 #' 
 #' geolocationPoints(kili)
 setGeneric('geolocationPoints',
-           function(object, ...) {
+           function(object) {
                standardGeneric('geolocationPoints')
            })
 
 #' @rdname geolocationPoints
 #' @export
 setMethod('geolocationPoints', 'SAR',
-          function(object, ...) {
+          function(object) {
               object@geolocationPoints
           })
 
 #' @rdname geolocationPoints
 #' @export
 setMethod('geolocationPoints', 'SARSet',
-          function(object, ...) {
-              lapply(object, geolocationPoints, ...)
+          function(object) {
+              lapply(object, geolocationPoints)
           })

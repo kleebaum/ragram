@@ -7,11 +7,11 @@
 \alias{intersection,SAR,SAR-method}
 \title{Intersection area between two SAR records}
 \usage{
-intersection(object, slave, ...)
+intersection(object, slave)
 
-\S4method{intersection}{SAR,ANY}(object, slave, ...)
+\S4method{intersection}{SAR,ANY}(object)
 
-\S4method{intersection}{SAR,SAR}(object, slave, ...)
+\S4method{intersection}{SAR,SAR}(object, slave)
 }
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}

@@ -17,8 +17,9 @@
 #' @param labels.y y coordinates of labels.
 #' @param col color within the recorded area.
 #' @param sar TRUE if location should be plotted.
+#' @param main Character. Title.
+#' @param add Logical. Add the map to a current plot?
 #' @param orbit TRUE if orbit number is plotted
-#' @param border color of the \code{\link{border}} of the SAR location.
 #' @param ... graphical parameters of \code{\link[maps]{map}} method.
 #' @export
 #' @seealso  \code{\link{plotGmap}}, \code{\link[maps]{map}}, \code{\link{border}}, \code{\link{plotBorder}}

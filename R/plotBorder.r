@@ -5,6 +5,7 @@
 #' @param object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param col color within the recorded area.
 #  @param panel TRUE if the border should be plotted on a lattice plot (e.g. levelplot).
+#' @param ... Further arguments to \code{\link[graphics]{plot}}.
 #' @export
 #' @seealso \code{\link{border}}
 #' @examples

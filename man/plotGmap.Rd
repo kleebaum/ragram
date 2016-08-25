@@ -37,11 +37,11 @@ or object of the \code{\link{SAR-class}} (or a subclass e.g. \code{\link{Sentine
 
 \item{col}{color within the recorded area.}
 
+\item{scale}{1 or 2. Using 2 doubles the number of pixels returned (and thus gives you better image quality if you need a large image).}
+
 \item{border}{color of the \code{\link{border}} of the SAR location.}
 
 \item{...}{graphical parameters of \code{\link[dismo]{gmap}} method.}
-
-\item{asp}{aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
 }
 \description{
 Plots a google earth map that shows the location of SAR records. 

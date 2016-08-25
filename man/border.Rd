@@ -7,11 +7,11 @@
 \alias{border,SARSet-method}
 \title{Border}
 \usage{
-border(object, ...)
+border(object)
 
-\S4method{border}{SAR}(object, ...)
+\S4method{border}{SAR}(object)
 
-\S4method{border}{SARSet}(object, ...)
+\S4method{border}{SARSet}(object)
 }
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}

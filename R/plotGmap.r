@@ -11,7 +11,7 @@
 #' @param ylab title of the y axis.
 #' @param col color within the recorded area.
 #' @param sar TRUE if location should be plotted.
-#' @param asp aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
+#' @param scale 1 or 2. Using 2 doubles the number of pixels returned (and thus gives you better image quality if you need a large image).
 #' @param border color of the \code{\link{border}} of the SAR location.
 #' @param ... graphical parameters of \code{\link[dismo]{gmap}} method.
 #' @export

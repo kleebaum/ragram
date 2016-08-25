@@ -7,20 +7,20 @@
 #' @export
 #' @return \code{\link[sp]{SpatialPolygons}}
 setGeneric('intersection',
-           function(object, slave, ...) {
+           function(object, slave) {
                standardGeneric('intersection')
            })
 
 #' @rdname intersection
 #' @export
 setMethod('intersection', 'SAR', 
-          function(object, ...) {
+          function(object) {
               border(object)
           })
 
 #' @rdname intersection
 #' @export
 setMethod('intersection', c('SAR', 'SAR'),
-          function(object, slave, ...) {
+          function(object, slave) {
               intersect(border(object), border(slave))
           })

@@ -7,11 +7,11 @@
 \alias{geolocationPoints,SARSet-method}
 \title{Retrieve geolocation points}
 \usage{
-geolocationPoints(object, ...)
+geolocationPoints(object)
 
-\S4method{geolocationPoints}{SAR}(object, ...)
+\S4method{geolocationPoints}{SAR}(object)
 
-\S4method{geolocationPoints}{SARSet}(object, ...)
+\S4method{geolocationPoints}{SARSet}(object)
 }
 \arguments{
 \item{object}{object of the \code{\link{SAR-class}} or a subclass 

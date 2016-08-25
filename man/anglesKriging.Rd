@@ -29,21 +29,23 @@ anglesKriging(object, slave, z = "thetaIn", formula = as.formula(paste(z,
   variogram.fit = T, plot.fit = F, ...)
 }
 \arguments{
-\item{object}{Object of class \code{\link{SpatialPointsDataFrame}}.}
+\item{object}{Object of class \code{\link[sp]{SpatialPointsDataFrame}}.}
+
+\item{slave}{Either an object of \code{\link{SAR-class}} or \code{\link[sp]{SpatialPoints}} class.}
 
 \item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
-\item{formula}{Formula used for kriging (see \code{\link{krige}} of gstat package).}
+\item{formula}{Formula used for kriging (see \code{\link[gstat]{krige}} of gstat package).}
 
 \item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
 \item{plot.fit}{Logical. Plot the fitted variogram?}
 
-\item{spatialPoints}{Object of \code{\link{SpatialPoints}} class.}
+\item{...}{Further arguments (ignored).}
 }
 \description{
 Angles provided by GCPs/TPs are known.
-Returns interpolated angles as a \code{\link{SpatialPointsDataFrame}} object.
+Returns interpolated angles as a \code{\link[sp]{SpatialPointsDataFrame}} object.
 }
 \examples{
 data(kili)
