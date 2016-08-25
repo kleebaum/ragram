@@ -15,6 +15,7 @@
 #' @param plot.fit. Logical. Plot the fitted variogram?
 #' @param interpolate Logical. Interpolate angles?
 #' @param ... graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.
+#' @rdname plotAngles
 #' @export
 #' @seealso  \code{\link{angles}}, \code{\link{GeolocationPoints-class}}
 #' @examples

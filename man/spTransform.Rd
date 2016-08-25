@@ -8,11 +8,11 @@
 \S4method{spTransform}{GeolocationPoints,CRS}(x, CRSobj, ...)
 }
 \arguments{
+\item{x}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+
+\item{CRSobj}{Object of class \code{\link[sp]{CRS-class}}, or of class character in which case it is converted to \code{\link[sp]{CRS-class}}.}
+
 \item{...}{Further arguments to \code{\link[sp]{spTransform}}.}
-
-\item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
-
-\item{CRS}{Object of class \code{\link[sp]{CRS-class}}, or of class character in which case it is converted to \code{\link[sp]{CRS-class}}.}
 }
 \description{
 Transforms GeolocationPoints to coordinate reference system 
