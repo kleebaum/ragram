@@ -1,3 +1,16 @@
+# Crop
+# 
+# Crop a geographic subset (see \code{\link[raster]{crop}}).
+# 
+# @param x object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
+# @param y Extent object, or any object from which an Extent object can be extracted.
+# @param ... Additional arguments as for \code{\link[raster]{writeRaster}}.
+# @export
+# @seealso \code{\link[raster]{crop}}
+# setGeneric('crop', function(x, y, ...) {
+#     standardGeneric('crop')
+# })
+
 #' Crop
 #' 
 #' Crop a geographic subset (see \code{\link[raster]{crop}}).
@@ -5,12 +18,7 @@
 #' @param x object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param y Extent object, or any object from which an Extent object can be extracted.
 #' @param ... Additional arguments as for \code{\link[raster]{writeRaster}}.
-#' @export
 #' @seealso \code{\link[raster]{crop}}
-setGeneric('crop', function(x, y, ...) {
-    standardGeneric('crop')
-})
-
 #' @rdname crop
 #' @export
 setMethod('crop', 'SAR',
