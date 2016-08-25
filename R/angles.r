@@ -12,6 +12,7 @@
 #' Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 #' See \code{\link{aggregate}} method of raster package.
 #' @return \code{\link{SpatialPointsDataFrame}}
+#' @rdname angles
 #' @export
 #' @seealso \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 #' @examples
@@ -36,6 +37,7 @@ setGeneric('angles',
                standardGeneric('angles')
            })
 
+#' @rdname angles
 #' @export
 setMethod('angles', 'GeolocationPoints', 
           function(object, ...) {
@@ -43,6 +45,7 @@ setMethod('angles', 'GeolocationPoints',
                                      proj4string = object@proj4string)
           })
 
+#' @rdname angles
 #' @export
 setMethod('angles', 'SAR', 
           function(object, ...) {
@@ -67,6 +70,7 @@ setMethod('angles', 'SAR',
               }
           })
 
+#' @rdname angles
 #' @export
 setMethod('angles', 'SARSet',
           function(object, ...) {

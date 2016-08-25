@@ -32,8 +32,10 @@ setGeneric('plotGmap',
                if(!is.element('dismo', installed.packages()[,1])) {
                    stop('Please install the `dismo` package first.')
                }
-               requireNamespace('dismo')
-               requireNamespace('maps')
+               if(!requireNamespace('dismo'))
+                   stop('Please load the `dismo` package first')
+               if(!requireNamespace('maps'))
+                   stop('Please load the `maps` package first')
                plotMap(object, xlab=xlab, ylab=ylab, xlim=xlim, ylim=ylim, 
                        map.default.text = F, sar=F, orbit=F, ...)
                e <- extent(xlim[1], xlim[2],

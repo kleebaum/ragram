@@ -1,15 +1,15 @@
 Package: ragram
 Title: Radargrammetry
 Version: 0.0.9
-Author: Anja Kleebaum <anja.kleebaum@stmail.uni-bayreuth.de>,
+Author: Anja Kleebaum <anja.kleebaum@uni-bayreuth.de>,
         Holger Lange <holger.lange@nibio.no>,
         Christina Bogner <christina.bogner@uni-bayreuth.de>
-Maintainer: Anja Kleebaum <anja.kleebaum@stmail.uni-bayreuth.de>
+Maintainer: Anja Kleebaum <anja.kleebaum@uni-bayreuth.de>
 Description: R package to perform radargrammetry.
 Depends:
-    R (>= 3.0), sp, raster, gstat, XML, fields, gdalUtils, foreach
+    R (>= 3.0), sp, raster, gstat, XML, fields, gdalUtils 
 Suggests: maps, dismo, GISTools
-Imports: Rcpp (>= 0.11.3), methods, abind
+Imports: Rcpp (>= 0.11.3), methods, abind, foreach
 LinkingTo: Rcpp
 License: GPL (>=3)
 RoxygenNote: 5.0.1
