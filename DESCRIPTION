@@ -9,7 +9,7 @@ Description: R package to perform radargrammetry.
 Depends:
     R (>= 3.0), sp, raster, gstat, XML, fields, gdalUtils, foreach
 Suggests: maps, dismo, GISTools
-Imports: Rcpp (>= 0.11.3)
+Imports: Rcpp (>= 0.11.3), methods, abind
 LinkingTo: Rcpp
 License: GPL (>=3)
 RoxygenNote: 5.0.1
