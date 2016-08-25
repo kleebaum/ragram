@@ -5,11 +5,11 @@
 \alias{coordsToMeter}
 \title{Convert coordinates to meter}
 \usage{
-coordsToMeter(coords = c(0, 0, 0, 0), ...)
+coordsToMeter(coords = c(0, 0, 0, 0))
 
-\S4method{coordsToMeter}{numeric}(coords)
+\S4method{coordsToMeter}{numeric}(coords = c(0, 0, 0, 0))
 
-\S4method{coordsToMeter}{Extent}(coords)
+\S4method{coordsToMeter}{Extent}(coords = c(0, 0, 0, 0))
 }
 \arguments{
 \item{coords}{extent or numeric vector of form c(lon1, lon2, lat1, lat2).}

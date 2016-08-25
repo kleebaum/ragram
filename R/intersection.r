@@ -5,7 +5,7 @@
 #' @param object object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @export
-#' @return \code{\link{SpatialPolygon}}
+#' @return \code{\link[sp]{SpatialPolygons}}
 setGeneric('intersection',
            function(object, slave, ...) {
                standardGeneric('intersection')

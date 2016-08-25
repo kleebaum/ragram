@@ -10,7 +10,7 @@ getStandardDeviationCpp <- function(img, u, v, n) {
 #' Calculates window mean for a given \code{\link{SAR-class}} object.
 #' The window is a square.
 #' 
-#' @param object Matrix.
+#' @param img Matrix.
 #' @param u Integer. Center of window (column, i.e. y coordinate).
 #' @param v Integer. Center of window (row, i.e. x coordinate).
 #' @param n Integer. (Window size-1)/2 in x and y direction.

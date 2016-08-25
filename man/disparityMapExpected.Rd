@@ -15,7 +15,7 @@ disparityMapExpected(object, slave, h = 1, z = "thetaIn",
 
 \item{h}{Numeric. Relative height.}
 
-\item{z}{either incidence (default) or elevation angles 'thetaEl'.}
+\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
 \item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
@@ -26,8 +26,6 @@ disparityMapExpected(object, slave, h = 1, z = "thetaIn",
 \item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 See \code{\link{aggregate}} method of raster package.}
-
-\item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 }
 \description{
 Returns the expected disparity within the intersection area of two SAR records.

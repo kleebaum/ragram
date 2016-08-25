@@ -8,7 +8,6 @@
 #' @param object Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param slave Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param h Numeric. Relative height.
-#' @param z either incidence (default) or elevation angles 'thetaEl'.
 #' @param z Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.
 #' @param variogram.fit Logical. Fit a Gaussian variogram?
 #' @param plot.fit Logical. Plot the fitted variogram?

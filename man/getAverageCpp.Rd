@@ -7,13 +7,13 @@
 getAverageCpp(img, u, v, n)
 }
 \arguments{
+\item{img}{Matrix.}
+
 \item{u}{Integer. Center of window (column, i.e. y coordinate).}
 
 \item{v}{Integer. Center of window (row, i.e. x coordinate).}
 
 \item{n}{Integer. (Window size-1)/2 in x and y direction.}
-
-\item{object}{Matrix.}
 }
 \description{
 Calculates window mean for a given \code{\link{SAR-class}} object.

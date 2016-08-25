@@ -6,8 +6,7 @@
 \usage{
 disparityMap(master, slave, window.size = 3, search.area.size = 7,
   search.area.shift = c(0, 0), resample.slave = T, window.moving.step = 1,
-  run.parallel = F, cores = 4, log = F, log.file = "dispMapLog.txt",
-  ...)
+  run.parallel = F, cores = 4, log = F, log.file = "dispMapLog.txt")
 }
 \arguments{
 \item{master}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
@@ -23,6 +22,8 @@ Correlation coefficients are multiplied if a vector is provided.}
 That is how a priori knowledge about disparity can be regarded.}
 
 \item{resample.slave}{Logical. Should the slave image be resampled to the aggregated master image?}
+
+\item{window.moving.step}{Integer. Step size to move windows in slave image. Default is 1.}
 
 \item{run.parallel}{Logical. Run algorithm on more than one cores?}
 

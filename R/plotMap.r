@@ -38,7 +38,7 @@ setGeneric('plotMap',
                if(!is.element('maps', installed.packages()[,1])) {
                    stop('Please install the `maps` package first.')
                }
-             require(maps)
+               requireNamespace('maps')
                standardGeneric('plotMap')
                if(map.default.text) {
                    xlimMapCorner <<- xlim

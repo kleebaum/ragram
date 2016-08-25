@@ -36,8 +36,6 @@ setGeneric('angles',
                standardGeneric('angles')
            })
 
-#' @name angles
-#' @rdname angles
 #' @export
 setMethod('angles', 'GeolocationPoints', 
           function(object, ...) {
@@ -45,8 +43,6 @@ setMethod('angles', 'GeolocationPoints',
                                      proj4string = object@proj4string)
           })
 
-#' @name angles
-#' @rdname angles
 #' @export
 setMethod('angles', 'SAR', 
           function(object, ...) {
@@ -71,8 +67,6 @@ setMethod('angles', 'SAR',
               }
           })
 
-#' @name angles
-#' @rdname angles
 #' @export
 setMethod('angles', 'SARSet',
           function(object, ...) {

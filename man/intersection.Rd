@@ -17,7 +17,7 @@ intersection(object, slave, ...)
 \item{slave}{object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 }
 \value{
-\code{\link{SpatialPolygon}}
+\code{\link[sp]{SpatialPolygons}}
 }
 \description{
 Returns the intersection of borders (provided by metadata) as a \code{\link[sp]{SpatialPolygons}} object.

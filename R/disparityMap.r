@@ -11,6 +11,7 @@
 #' @param search.area.shift Numeric vector. Pixels in x and y direction that the search area should be shifted.
 #' That is how a priori knowledge about disparity can be regarded.
 #' @param resample.slave Logical. Should the slave image be resampled to the aggregated master image?
+#' @param window.moving.step Integer. Step size to move windows in slave image. Default is 1.
 #' @param run.parallel Logical. Run algorithm on more than one cores?
 #' @param cores Integer. How many cores should be allocated?
 #' @param log Logical. Log output to text file?
@@ -47,7 +48,7 @@ disparityMap <- function(master, slave,
                          resample.slave=T,
                          window.moving.step=1,
                          run.parallel=F, cores=4, 
-                         log=F, log.file='dispMapLog.txt', ...) {
+                         log=F, log.file='dispMapLog.txt') {
     for(i in 1:length(window.size)) {
         if(window.size[i] %% 2 != 1) {
             window.size[i] <- window.size[i] + 1
