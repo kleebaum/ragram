@@ -14,10 +14,10 @@
 #' @examples
 #' data(kili)
 #' 
-#' plotMap(kili[[1]], orbit=F)
+#' plotMap(kili[[1]], orbit=FALSE)
 #' plotOrbitNumber(kili[[1]])
 #' 
-#' plotMap(kili, orbit=F)
+#' plotMap(kili, orbit=FALSE)
 #' plotOrbitNumber(kili)
 setGeneric('plotOrbitNumber', 
            function(object, cex=1, col='black', panel=F, ...) {

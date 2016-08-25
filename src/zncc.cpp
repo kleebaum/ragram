@@ -51,7 +51,6 @@ NumericVector getAvgAndSD(NumericMatrix img, int u, int v, int n) {
 //' @param u2 Integer. Column, i.e. y coordinate of slave pixel.
 //' @param v2 Integer. Row, i.e. x coordinate of slave pixel.
 //' @param n Integer. (Window size-1)/2 in x direction.
-//' @param m Integer. (Window size-1)/2 in y direction.
 //' @export
 // [[Rcpp::export(name = 'znccCpp')]]
 double zncc(NumericMatrix master, NumericMatrix slave, 

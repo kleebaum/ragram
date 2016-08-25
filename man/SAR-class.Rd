@@ -6,7 +6,7 @@
 \title{Synthetic aperture radar (SAR) class}
 \description{
 A class to handle synthetic aperture radar (SAR) data.
-This class inherits from the \code{\link[raster]{RasterLayer}} class of the raster package.
+This class inherits from the \code{\link[raster]{RasterLayer-class}} class of the raster package.
 }
 \section{Slots}{
 

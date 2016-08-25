@@ -9,6 +9,7 @@
 #' @import gdalUtils
 #' @import foreach
 #' @import Rcpp
+#' @import methods
 
 ###---Settings---####
 colors <- c("blue", "green", "yellow", "orange", "red", "purple")

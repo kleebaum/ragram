@@ -39,10 +39,10 @@ data(kili)
 anglesDif(kili[[1]], kili[[5]])
 plotAnglesDif(kili[[1]], kili[[5]])
 
-anglesDif(master, slave, interpolate=T, aggregate.fact=100)
-plotAnglesDif(master, slave, interpolate=T, aggregate.fact=100)
+anglesDif(master, slave, interpolate=TRUE, aggregate.fact=100)
+plotAnglesDif(master, slave, interpolate=TRUE, aggregate.fact=100)
 
-anglesDif.sp <- anglesDif(master, slave, interpolate = T, aggregate.fact=10)
+anglesDif.sp <- anglesDif(master, slave, interpolate = TRUE, aggregate.fact=10)
 anglesDif.raster <- rasterFromXYZ(anglesDif.sp)
 plot(anglesDif.raster)
 }

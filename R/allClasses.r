@@ -20,7 +20,7 @@ setClass('GeolocationPoints',
 #' Synthetic aperture radar (SAR) class
 #' 
 #' A class to handle synthetic aperture radar (SAR) data.
-#' This class inherits from the \code{\link[raster]{RasterLayer}} class of the raster package.
+#' This class inherits from the \code{\link[raster]{RasterLayer-class}} class of the raster package.
 #'
 #' @slot address Character. Address of the SAR data main folder.
 #' @slot polarization Character. Polarization of the SAR record (e.g. VV or HH).

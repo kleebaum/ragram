@@ -23,7 +23,7 @@
 #' 
 #' disparityMapExpected(kili[[1]], kili[[5]], h=1)
 #' 
-#' disparityMapExpected(master, slave, interpolate = T, aggregate.fact = 100)
+#' disparityMapExpected(master, slave, interpolate = TRUE, aggregate.fact = 100)
 disparityMapExpected <- function(object, slave, h=1, z='thetaIn',
                                  variogram.fit=T, plot.fit=F, 
                                  interpolate=F, aggregate.fact=1000, ...) {

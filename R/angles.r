@@ -24,9 +24,9 @@
 #' plot(angles(kili[[1]]))
 #' spplot(angles(kili[[1]]))
 #' 
-#' plotAngles(master, interpolate = T, aggregate.fact=100)
+#' plotAngles(master, interpolate = TRUE, aggregate.fact=100)
 #' 
-#' angles.sp <- angles(master, interpolate = T, aggregate.fact=10)
+#' angles.sp <- angles(master, interpolate = TRUE, aggregate.fact=10)
 #' angles.raster <- rasterFromXYZ(angles.sp)
 #' plot(angles.raster)
 setGeneric('angles', 

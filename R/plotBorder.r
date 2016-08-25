@@ -14,9 +14,9 @@
 #' 
 #' plotMap(kili, sar=FALSE, orbit=FALSE)
 #' 
-#' plotBorder(kili[[1]], add=T)
+#' plotBorder(kili[[1]], add=TRUE)
 #' plotOrbitNumber(kili[[1]])
-#' plotBorder(kili[[2]], add=T)
+#' plotBorder(kili[[2]], add=TRUE)
 #' plotOrbitNumber(kili[[2]])
 setGeneric('plotBorder', 
            function(object, col=rgb(1,0,0,0.5), panel=F, ...) {

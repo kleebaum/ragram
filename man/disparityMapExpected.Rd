@@ -40,7 +40,7 @@ data(kili)
 
 disparityMapExpected(kili[[1]], kili[[5]], h=1)
 
-disparityMapExpected(master, slave, interpolate = T, aggregate.fact = 100)
+disparityMapExpected(master, slave, interpolate = TRUE, aggregate.fact = 100)
 }
 \seealso{
 \code{\link{disparityMap}}, \code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}

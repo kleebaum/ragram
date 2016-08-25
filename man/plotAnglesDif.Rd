@@ -75,10 +75,10 @@ plotAnglesDif(kili[[1]], kili[[3]])
 
 plotAnglesDif(kili)
 
-plotAnglesDif(master, slave, interpolate=T)
-plot(anglesDif(master, slave, interpolate=T, aggregate.fact=100))
+plotAnglesDif(master, slave, interpolate=TRUE)
+plot(anglesDif(master, slave, interpolate=TRUE, aggregate.fact=100))
 
-plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
+plotAnglesDif(kili[[1]], kili[[5]], disparity = TRUE,
 legend.lab = 'Disparity [m]', h=100)
 }
 \seealso{

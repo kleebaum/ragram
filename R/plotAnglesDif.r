@@ -31,10 +31,10 @@
 #' 
 #' plotAnglesDif(kili)
 #' 
-#' plotAnglesDif(master, slave, interpolate=T)
-#' plot(anglesDif(master, slave, interpolate=T, aggregate.fact=100))
+#' plotAnglesDif(master, slave, interpolate=TRUE)
+#' plot(anglesDif(master, slave, interpolate=TRUE, aggregate.fact=100))
 #' 
-#' plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
+#' plotAnglesDif(kili[[1]], kili[[5]], disparity = TRUE,
 #' legend.lab = 'Disparity [m]', h=100)
 setGeneric('plotAnglesDif', function(object, slave, z='thetaIn',
                                      xlab='Longitude', ylab='Latitude', 

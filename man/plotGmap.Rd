@@ -40,6 +40,6 @@ data(kili)
 plotGmap(kili)
 }
 \seealso{
-\code{\link{plotMap}}, \code{\link{gmap}}, \code{\link{border}}, \code{\link{plotBorder}}
+\code{\link{plotMap}}, \code{\link[dismo]{gmap}}, \code{\link{border}}, \code{\link{plotBorder}}
 }
 
