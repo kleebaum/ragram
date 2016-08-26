@@ -11,6 +11,8 @@ Objects of this class are lists.
 \section{Slots}{
 
 \describe{
+\item{\code{.Data}}{List or vector of \code{\link{SAR-class}} or subclass objects.}
+
 \item{\code{centerLat}}{Numeric.}
 
 \item{\code{centerLon}}{Numeric.}
@@ -23,7 +25,7 @@ Objects of this class are lists.
 
 \item{\code{crs}}{\code{\link[sp]{CRS-class}} object}
 
-\item{\code{extent.}}{Object of \code{\link[raster]{Extent-class}}.}
+\item{\code{extent}}{Object of \code{\link[raster]{Extent-class}}.}
 }}
 \examples{
 # orbits 130 and 57
