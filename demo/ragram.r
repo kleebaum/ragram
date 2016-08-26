@@ -42,7 +42,7 @@ plotAngles(slave, interpolate = T, aggregate.fact = 10)
 plotAnglesDif(master, slave, interpolate = T, aggregate.fact = 10)
 
 # disparity map using zero normalied cross correlation (ZNCC)
-master <- aggregate(master, 5)
+master <- aggregate(master, 2)
 dispMap <- disparityMap(master, slave, window.size = 25,
              search.area.size = 51)
 
