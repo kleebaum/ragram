@@ -4,6 +4,9 @@
 \name{SARSet-class}
 \alias{SARSet-class}
 \title{SAR set class}
+\arguments{
+\item{elements}{List or vector of \code{\link{SAR-class}} or subclass objects.}
+}
 \description{
 A class to handle a collection of synthetic aperture radar (SAR) records.
 Objects of this class are lists.
@@ -17,9 +20,9 @@ Objects of this class are lists.
 
 \item{\code{centerLon}}{Numeric.}
 
-\item{\code{cornerLat}}{Numeric vector.}
+\item{\code{cornerLon}}{Numeric vector.}
 
-\item{\code{centerLon}}{Numeric vector.}
+\item{\code{cornerLat}}{Numeric vector.}
 
 \item{\code{satellite}}{Character.}
 
