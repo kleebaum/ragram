@@ -11,8 +11,6 @@ Objects of this class are lists.
 \section{Fields}{
 
 \describe{
-\item{\code{.Data}}{Objects of \code{\link{SAR-class}} or subclass.}
-
 \item{\code{centerLat}}{Numeric.}
 
 \item{\code{centerLon}}{Numeric.}

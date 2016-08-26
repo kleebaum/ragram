@@ -92,6 +92,8 @@ To use even the highest amplitudes type 'object@data@max'.}
 
 \item{legend.line}{Numeric. Distance between legend and label.}
 
+\item{breaks}{Integer vector. Where to break color bar.}
+
 \item{legend.breaks}{Integer vector. Where to locate legend ticks.}
 
 \item{zlim}{Numeric vector of length 2, giving the z coordinate range. Range of values that are plotted.}
@@ -118,7 +120,11 @@ To use even the highest amplitudes type 'object@data@max'.}
 
 \item{ylim}{Numeric vector of length 2, giving the y coordinate range.}
 
-\item{braks}{Integer vector. Where to break color bar.}
+\item{asp}{Numeric vector. Aspect, if latitude-longitude coordinates: 1/cos((mean(range(ylim)) * pi)/180).}
+
+\item{x}{Object of \code{\link{SARSet-class}}.}
+
+\item{y}{NULL}
 }
 \description{
 Plot one SAR or two SAR records together.

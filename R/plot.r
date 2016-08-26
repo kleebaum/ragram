@@ -15,6 +15,7 @@
 #' @param maxpixels Maximum number of cells to use for the plot (see \code{\link{plot}} for RasterLayer object).
 #' @param max.val maximal amplitude to plot, higher amplitudes are ploted in white. 
 #' To use even the highest amplitudes type 'object@data@max'.
+#' @param asp Numeric vector. Aspect, if latitude-longitude coordinates: 1/cos((mean(range(ylim)) * pi)/180).
 #' @param plotIntersect logical. Plot the intersection area?
 #' @param border color of the border.
 #' @param grid logical. Add a grid to the plot?
@@ -23,7 +24,7 @@
 #' @param legend.lab Character. Legend label.
 #' @param legend.line Numeric. Distance between legend and label.
 #' @param legend.by Numeric. Size of legend intervals.
-#' @param braks Integer vector. Where to break color bar.
+#' @param breaks Integer vector. Where to break color bar.
 #' @param legend.breaks Integer vector. Where to locate legend ticks.
 #' @param north.arrow logical. Plot a north arrow?
 #' @param north.arrow.pos vector c(x,y) that contains the position of the north arrow.
@@ -35,6 +36,8 @@
 #' @param cex.lab Numeric. Size of label text.
 #' @param cex.axis Numeric. Size of axes.
 #' @param ... plotting parameters like xlim, ylim and asp.
+#' @param x Object of \code{\link{SARSet-class}}.
+#' @param y NULL
 #' @export
 #' @examples
 #' data(kili)
