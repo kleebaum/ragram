@@ -40,6 +40,8 @@ plotAnglesDif(object, slave, z = "thetaIn", xlab = "Longitude",
 \arguments{
 \item{object}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
+\item{slave}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
+
 \item{z}{Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.}
 
 \item{xlab}{Character. Title of the x axis.}
@@ -50,9 +52,19 @@ plotAnglesDif(object, slave, z = "thetaIn", xlab = "Longitude",
 
 \item{col.regions}{Color ramp.}
 
+\item{cex}{Numeric. Size of label text.}
+
+\item{cex.axis}{Numeric. Size of axes.}
+
+\item{grid}{Logical. Plot a grid?}
+
 \item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
+\item{plot.fit}{Logical. Plot the fitted variogram?}
+
 \item{plot.legend}{Logical. Plot the legend?}
+
+\item{pch}{Integer. Point type.}
 
 \item{legend.lab}{Character. Title of the legend.}
 
@@ -69,11 +81,13 @@ the interpolation might take a very long time...}
 
 \item{...}{graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.}
 
+\item{xlim}{Numeric vector of length 2, giving the x coordinate range.}
+
+\item{ylim}{Numeric vector of length 2, giving the y coordinate range.}
+
 \item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
 
-\item{plot.fit.}{Logical. Plot the fitted variogram?}
-
-\item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
+\item{zlim}{Numeric vector of length 2, giving the z coordinate range. Range of values that are plotted.}
 }
 \description{
 Plots the difference in angles of two provided by GCPs/TPs as points.

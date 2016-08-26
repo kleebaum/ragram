@@ -47,19 +47,37 @@ plotAngles(object, z = "thetaIn", xlab = "Longitude", ylab = "Latitude",
 
 \item{col.regions}{Color ramp.}
 
+\item{cex}{Numeric. Size of label text.}
+
+\item{cex.axis}{Numeric. Size of axes.}
+
+\item{grid}{Logical. Plot a grid?}
+
 \item{plot.legend}{Logical. Plot the legend?}
+
+\item{pch}{Integer. Point type.}
 
 \item{legend.lab}{Character. Title of the legend.}
 
 \item{variogram.fit}{Logical. Fit a Gaussian variogram?}
 
+\item{plot.fit}{Logical. Plot the fitted variogram?}
+
 \item{interpolate}{Logical. Interpolate angles?}
+
+\item{aggregate.fact}{Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
+Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
+See \code{\link{aggregate}} method of raster package.}
 
 \item{...}{graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.}
 
+\item{xlim}{Numeric vector of length 2, giving the x coordinate range.}
+
+\item{ylim}{Numeric vector of length 2, giving the y coordinate range.}
+
 \item{asp}{Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).}
 
-\item{plot.fit.}{Logical. Plot the fitted variogram?}
+\item{zlim}{Numeric vector of length 2, giving the z coordinate range. Range of values that are plotted.}
 }
 \description{
 Plots the angles provided by GCPs/TPs as points.

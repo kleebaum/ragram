@@ -74,11 +74,29 @@ an object of the \code{\link{SARSet-class}}, then slave is ignored).}
 \item{max.val}{maximal amplitude to plot, higher amplitudes are ploted in white. 
 To use even the highest amplitudes type 'object@data@max'.}
 
+\item{cex.axis}{Numeric. Size of axes.}
+
+\item{cex.lab}{Numeric. Size of label text.}
+
+\item{legend.by}{Numeric. Size of legend intervals.}
+
 \item{plotIntersect}{logical. Plot the intersection area?}
 
 \item{border}{color of the border.}
 
 \item{grid}{logical. Add a grid to the plot?}
+
+\item{plot.legend}{Logical. Plot the legend?}
+
+\item{legend.lab}{Character. Legend label.}
+
+\item{legend.line}{Numeric. Distance between legend and label.}
+
+\item{legend.breaks}{Integer vector. Where to locate legend ticks.}
+
+\item{zlim}{Numeric vector of length 2, giving the z coordinate range. Range of values that are plotted.}
+
+\item{cols}{color ramp (see \code{\link{colorRampPalette}}).}
 
 \item{north.arrow}{logical. Plot a north arrow?}
 
@@ -96,7 +114,11 @@ To use even the highest amplitudes type 'object@data@max'.}
 
 \item{...}{plotting parameters like xlim, ylim and asp.}
 
-\item{col}{color ramp (see \code{\link{colorRampPalette}}).}
+\item{xlim}{Numeric vector of length 2, giving the x coordinate range.}
+
+\item{ylim}{Numeric vector of length 2, giving the y coordinate range.}
+
+\item{braks}{Integer vector. Where to break color bar.}
 }
 \description{
 Plot one SAR or two SAR records together.

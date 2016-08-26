@@ -130,11 +130,12 @@ setClass('TSX',
 #' A class to handle a collection of synthetic aperture radar (SAR) records.
 #' Objects of this class are lists.
 #' 
-#' @slot .Data Objects of \code{\link{SAR-class}} or subclass.
-#' @slot centerLat Numeric.
-#' @slot centerLon Numeric.
-#' @slot cornerLat Numeric vector.
-#' @slot centerLon Numeric vector.
+#' @field .Data Objects of \code{\link{SAR-class}} or subclass.
+#' @field centerLat Numeric.
+#' @field centerLon Numeric.
+#' @field cornerLat Numeric vector.
+#' @field centerLon Numeric vector.
+#' @field satellite Character.
 #' @slot crs \code{\link[sp]{CRS-class}} object
 #' @slot extent. Object of \code{\link[raster]{Extent-class}}.
 #' @export

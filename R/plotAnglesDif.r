@@ -3,24 +3,31 @@
 #' Plots the difference in angles of two provided by GCPs/TPs as points.
 #'  
 #' @param object Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
+#' @param slave Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).
 #' @param z Character. Either incidence ('thetaIn', default) or elevation angles 'thetaEl'.
 #' @param xlab Character. Title of the x axis.
 #' @param ylab Character. Title of the y axis.
+#' @param xlim Numeric vector of length 2, giving the x coordinate range.
+#' @param ylim Numeric vector of length 2, giving the y coordinate range.
+#' @param zlim Numeric vector of length 2, giving the z coordinate range. Range of values that are plotted.
 #' @param breaks Integer. Number of breaks of the color ramp.
 #' @param col.regions Color ramp.
 #' @param plot.legend Logical. Plot the legend?
 #' @param legend.lab Character. Title of the legend.
 #' @param asp Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
 #' @param variogram.fit Logical. Fit a Gaussian variogram?
-#' @param plot.fit. Logical. Plot the fitted variogram?
+#' @param plot.fit Logical. Plot the fitted variogram?
 #' @param interpolate Logical. Interpolate angles?
 #' @param aggregate.fact Integer. Aggregation factor expressed as number of cells in each direction (horizontally and vertically). 
 #' Or two integers (horizontal and vertical aggregation factor) or three integers (when also aggregating over layers). 
 #' See \code{\link{aggregate}} method of raster package. If no aggregation is done, 
 #' the interpolation might take a very long time...
-#' @param asp Numeric vector. Aspect, default is 1/cos((mean(range(ylim)) * pi)/180).
 #' @param disparity Logical. Should the expected disparity be plotted?
 #' @param h Numeric. Relative height for plotting the expected disparity.
+#' @param cex Numeric. Size of label text.
+#' @param cex.axis Numeric. Size of axes.
+#' @param grid Logical. Plot a grid?
+#' @param pch Integer. Point type.
 #' @param ... graphical parameters. Any argument that can be passed to plot, such as axes=FALSE and main='title'.
 #' @export
 #' @seealso  \code{\link{anglesDif}}, \code{\link{angles}}, \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
