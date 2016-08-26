@@ -8,7 +8,7 @@
 A class to handle a collection of synthetic aperture radar (SAR) records.
 Objects of this class are lists.
 }
-\section{Fields}{
+\section{Slots}{
 
 \describe{
 \item{\code{centerLat}}{Numeric.}
@@ -20,10 +20,7 @@ Objects of this class are lists.
 \item{\code{centerLon}}{Numeric vector.}
 
 \item{\code{satellite}}{Character.}
-}}
-\section{Slots}{
 
-\describe{
 \item{\code{crs}}{\code{\link[sp]{CRS-class}} object}
 
 \item{\code{extent.}}{Object of \code{\link[raster]{Extent-class}}.}
