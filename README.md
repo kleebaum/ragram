@@ -1,6 +1,8 @@
 # ragram
 Radargrammetry R package
 
+[![Build Status](https://travis-ci.org/kleebaum/ragram.svg?branch=master)](https://travis-ci.org/kleebaum/ragram)
+
 ## Installation
 ```
 library(devtools)
