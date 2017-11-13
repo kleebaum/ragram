@@ -107,8 +107,8 @@ NumericVector disparityMap(NumericMatrix master, NumericMatrix slave,
     
     NumericMatrix znccMatrix(len,len);
     
-    for(int u=uStart; u<uEnd; u++) {
-        for(int v=vStart; v<vEnd; v++) {
+    for(int u=uStart; u<=uEnd; u++) {
+        for(int v=vStart; v<=vEnd; v++) {
             for(int i=0; i<len; i++) {
                 for(int j=0; j<len; j++) {
                     k=index(i);
@@ -119,12 +119,12 @@ NumericVector disparityMap(NumericMatrix master, NumericMatrix slave,
                 }
             }
             
-            int whichMin = which_min(znccMatrix);
-            dispY(u-uStart,v-vStart) = index(whichMin % znccMatrix.nrow());
+            int whichMax = which_max(znccMatrix);
+            dispY(u-uStart,v-vStart) = index(whichMax % znccMatrix.nrow());
             int dispXTemp = 0;
-            while(whichMin >= znccMatrix.ncol()) {
+            while(whichMax >= znccMatrix.ncol()) {
                 dispXTemp += 1;
-                whichMin = whichMin - znccMatrix.nrow();
+                whichMax = whichMax - znccMatrix.nrow();
             }
             dispX(u-uStart,v-vStart) = index(dispXTemp);
         }
