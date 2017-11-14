@@ -5,7 +5,7 @@
 data(kili)
 
 # master <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE/',
-#                     satellite = 'sentinel') 
+#                     satellite = 'sentinel')
 # slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
 #                     satellite = 'sentinel')
 
@@ -31,7 +31,7 @@ plotAnglesDif(kili[[1]], kili[[5]], disparity = T,
 
 # inspect cropped Sentinel-1 same side stereo pair
 plotGmap(master, xlim=c(37,37.7), ylim=c(-3.6,-2.8), sar=F)
-plot(spTransform(border(master), CRS('+init=epsg:4326')), 
+plot(spTransform(border(master), CRS('+init=epsg:4326')),
      add=T, col='white')
 plotSAR(master, maxpixels = 500000)
 plotSAR(slave, maxpixels = 500000)
@@ -42,9 +42,10 @@ plotAngles(slave, interpolate = T, aggregate.fact = 10)
 plotAnglesDif(master, slave, interpolate = T, aggregate.fact = 10)
 
 # disparity map using zero normalied cross correlation (ZNCC)
-master <- aggregate(master, 2)
-dispMap <- disparityMap(master, slave, window.size = 25,
-             search.area.size = 51)
+data(kili)
+master <- aggregate(master, 5)
+
+dispMap <- disparityMap(master, slave, window.size = 11, search.area.size=25)
 
 dispMapLon <- raster(dispMap[,,1])
 extent(dispMapLon) <- extent(master)

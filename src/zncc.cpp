@@ -120,7 +120,13 @@ NumericVector disparityMap(NumericMatrix master, NumericMatrix slave,
             }
             
             int whichMax = which_max(znccMatrix);
-            dispY(u-uStart,v-vStart) = index(whichMax % znccMatrix.nrow());
+            //Rcout << "The value is " << whichMax << std::endl;
+            try{
+              dispY(u-uStart,v-vStart) = index(whichMax % znccMatrix.nrow());
+            } catch (...) {
+              //::Rf_error("c++ exception (unknown reason)"); 
+              Rcout << "Warning: No maximal zncc value was found." << std::endl;
+            }
             int dispXTemp = 0;
             while(whichMax >= znccMatrix.ncol()) {
                 dispXTemp += 1;

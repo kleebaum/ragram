@@ -41,7 +41,7 @@
 #' # to run parallel register cores first, e.g.:
 #' # library(doMC)
 #' # registerDoMC(4)
-disparityMapFaster <- function(master, slave, window.size = 3, search.area.size = 7,
+disparityMap <- function(master, slave, window.size = 3, search.area.size = 7,
   search.area.shift = c(0, 0), resample.slave = T, window.moving.step = 1, run.parallel = F,
   cores = 4, log = F, log.file = "dispMapLog.txt") {
   if (window.size%%2 == 0) {
