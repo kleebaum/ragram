@@ -48,4 +48,3 @@ Projects SAR object using \code{\link[gdalUtils]{gdalwarp}}.
 \examples{
 # object@geolocationPoints <- spTransform(object@geolocationPoints, CRS(t_srs))
 }
-

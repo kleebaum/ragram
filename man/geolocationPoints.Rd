@@ -36,4 +36,3 @@ geolocationPoints(kili)
 \seealso{
 \code{\link{GeolocationPoints-class}}
 }
-

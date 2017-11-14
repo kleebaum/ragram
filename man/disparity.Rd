@@ -23,4 +23,3 @@ plot((c(35:45)/360*2*pi), disparity(10, (c(35:45)/360*2*pi), 45/360*2*pi), type=
 \seealso{
 \code{\link{disparityMapExpected}}
 }
-

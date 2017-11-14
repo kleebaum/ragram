@@ -25,4 +25,3 @@ ssd(master, slave, u1, v1, u2, v2, n = 3)
 Calculates the sum of squared differences (SSD) between two \code{\link{SAR-class}} objects.
 This method also works for \code{\link{RasterLayer-class}} objects. The minimum SSD value determines disparity.
 }
-

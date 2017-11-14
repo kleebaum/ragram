@@ -67,4 +67,3 @@ plot(angles.raster)
 \seealso{
 \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 }
-

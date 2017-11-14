@@ -2,12 +2,12 @@
 % Please edit documentation in R/plot.r
 \docType{methods}
 \name{plotSAR}
-\alias{plot,SARSet,ANY-method}
 \alias{plotSAR}
-\alias{plotSAR,RasterLayer,ANY-method}
 \alias{plotSAR,SAR,ANY-method}
+\alias{plotSAR,RasterLayer,ANY-method}
 \alias{plotSAR,SAR,SAR-method}
 \alias{plotSAR,SARSet,ANY-method}
+\alias{plot,SARSet,ANY-method}
 \title{Plot SAR record}
 \usage{
 plotSAR(object, slave = NULL, xlab = "Longitude", ylab = "Latitude",
@@ -134,4 +134,3 @@ data(kili)
 plotSAR(master)
 plotSAR(slave) 
 }
-

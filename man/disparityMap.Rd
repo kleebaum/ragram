@@ -13,8 +13,7 @@ disparityMap(master, slave, window.size = 3, search.area.size = 7,
 
 \item{slave}{Object of the \code{\link{SAR-class}} or a subclass (e.g. \code{\link{Sentinel-class}} or \code{\link{TSX-class}}).}
 
-\item{window.size}{Integer or vector of integers. Edge Length of quadratic window(s) to calculate \code{\link{zncc}}.
-Correlation coefficients are multiplied if a vector is provided.}
+\item{window.size}{Integer. Edge Length of quadratic window(s) to calculate \code{\link{zncc}}.}
 
 \item{search.area.size}{Integer. Edge Length of quadratic search area in slave image.}
 
@@ -34,11 +33,11 @@ That is how a priori knowledge about disparity can be regarded.}
 \item{log.file}{Character. Log file address and name.}
 }
 \value{
-Four dimensional array. The first and second dimension give rows and columns, respectively. 
+Four dimensional array. The first and second dimension give rows and columns, respectively.
 The third and forth dimension gives disparities in x and y direction. The disparity is measured in pixel.
 }
 \description{
-Calculates a disparity map between two SAR records using window based 
+Calculates a disparity map between two SAR records using window based
 zero normalized cross correlation (ZNCC).
 }
 \examples{
@@ -67,4 +66,3 @@ plot(disp.map.diagonal)
 \seealso{
 \code{\link{zncc}}
 }
-

@@ -55,4 +55,3 @@ plotGmap(kili)
 \seealso{
 \code{\link{plotMap}}, \code{\link[dismo]{gmap}}, \code{\link{border}}, \code{\link{plotBorder}}
 }
-

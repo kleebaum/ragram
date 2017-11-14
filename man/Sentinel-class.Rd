@@ -23,6 +23,7 @@ This class inherits from the \code{\link{SAR-class}}.
 
 \item{\code{imgSubstring}}{Character. This substring is searched for when image data is read.}
 }}
+
 \examples{
 # orbits 130 and 57
 master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
@@ -43,4 +44,3 @@ master@node
 \seealso{
 \code{\link{SAR-class}}, \code{\link{GeolocationPoints-class}}, \code{\link{SARSet-class}}
 }
-

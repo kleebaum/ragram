@@ -67,4 +67,3 @@ plot(anglesDif.raster)
 \seealso{
 \code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}
 }
-

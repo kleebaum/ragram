@@ -20,4 +20,3 @@ Crop a geographic subset (see \code{\link[raster]{crop}}).
 \seealso{
 \code{\link[raster]{crop}}
 }
-

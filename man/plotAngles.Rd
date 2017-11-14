@@ -3,9 +3,9 @@
 \docType{methods}
 \name{plotAngles}
 \alias{plotAngles}
+\alias{plotAngles,SpatialPointsDataFrame-method}
 \alias{plotAngles,SAR-method}
 \alias{plotAngles,SARSet-method}
-\alias{plotAngles,SpatialPointsDataFrame-method}
 \title{Plot angles}
 \usage{
 plotAngles(object, z = "thetaIn", xlab = "Longitude", ylab = "Latitude",
@@ -100,4 +100,3 @@ angles.raster <- rasterFromXYZ(angles.sp)
 \seealso{
 \code{\link{angles}}, \code{\link{GeolocationPoints-class}}
 }
-

@@ -45,4 +45,3 @@ plotOrbitNumber(kili)
 \seealso{
 \code{\link{plotMap}}, \code{\link{plotGmap}}
 }
-

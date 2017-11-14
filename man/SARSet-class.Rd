@@ -30,6 +30,7 @@ Objects of this class are lists.
 
 \item{\code{extent}}{Object of \code{\link[raster]{Extent-class}}.}
 }}
+
 \examples{
 # orbits 130 and 57
 master <- new('Sentinel', address=system.file('extdata/S1A_IW_GRDH_1SDV_20151220T155517.SAFE', 
@@ -55,4 +56,3 @@ kiliSetAsc <- sarSet(c(master, slave))
 \seealso{
 \code{\link{SAR-class}}
 }
-

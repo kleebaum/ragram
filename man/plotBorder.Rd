@@ -38,4 +38,3 @@ plotOrbitNumber(kili[[2]])
 \seealso{
 \code{\link{border}}
 }
-

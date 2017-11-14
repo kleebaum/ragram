@@ -29,4 +29,3 @@ plotBorder(master)
 \seealso{
 \code{\link{plotBorder}}
 }
-

@@ -48,4 +48,3 @@ slave <- sarRecord('extdata/S1A_IW_GRDH_1SDV_20151215T154711.SAFE/',
 \seealso{
 \code{\link{SAR-class}}, \code{\link{Sentinel-class}}, \code{\link{TSX-class}}
 }
-

@@ -45,4 +45,3 @@ disparityMapExpected(master, slave, interpolate = TRUE, aggregate.fact = 100)
 \seealso{
 \code{\link{disparityMap}}, \code{\link{angles}}, \code{\link{plotAnglesDif}}, \code{\link{GeolocationPoints-class}}
 }
-

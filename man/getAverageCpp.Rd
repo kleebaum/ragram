@@ -19,4 +19,3 @@ getAverageCpp(img, u, v, n)
 Calculates window mean for a given \code{\link{SAR-class}} object.
 The window is a square.
 }
-

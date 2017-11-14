@@ -21,4 +21,3 @@ Transforms GeolocationPoints to coordinate reference system
 \seealso{
 \code{\link{sarProject}}, \code{\link[sp]{spTransform}}, \code{\link[sp]{CRS-class}}
 }
-

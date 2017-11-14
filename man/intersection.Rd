@@ -24,4 +24,3 @@ intersection(object, slave)
 \description{
 Returns the intersection of borders (provided by metadata) as a \code{\link[sp]{SpatialPolygons}} object.
 }
-

@@ -108,4 +108,3 @@ legend.lab = 'Disparity [m]', h=100)
 \seealso{
 \code{\link{anglesDif}}, \code{\link{angles}}, \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 }
-

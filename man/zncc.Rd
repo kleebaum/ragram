@@ -35,4 +35,3 @@ zncc(master, slave, u1, v1, u2, v2, n = 3, m = n)
 Calculates the zero normalized cross correlation (ZNCC) coefficient between two \code{\link{SAR-class}} objects.
 This method also works for \code{\link{RasterLayer-class}} objects. The maximum ZNCC value determines disparity.
 }
-

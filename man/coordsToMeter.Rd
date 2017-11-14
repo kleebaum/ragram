@@ -3,8 +3,8 @@
 \docType{methods}
 \name{coordsToMeter}
 \alias{coordsToMeter}
-\alias{coordsToMeter,Extent-method}
 \alias{coordsToMeter,numeric-method}
+\alias{coordsToMeter,Extent-method}
 \title{Convert coordinates to meter}
 \usage{
 coordsToMeter(coords = c(0, 0, 0, 0))
@@ -23,4 +23,3 @@ c(longitudinal distance in meter, latitudinal distance in meter).
 \description{
 Converts an extent of longitudinal/latitudinal coordinates to meters.
 }
-

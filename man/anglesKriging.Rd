@@ -54,4 +54,3 @@ anglesKriging(master@geolocationPoints, slave@geolocationPoints)
 \seealso{
 \code{\link{angles}}, \code{\link{anglesDif}}, \code{\link{plotAngles}}, \code{\link{GeolocationPoints-class}}
 }
-

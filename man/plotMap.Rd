@@ -76,4 +76,3 @@ plotMap(kili[[1]])
 \seealso{
 \code{\link{plotGmap}}, \code{\link[maps]{map}}, \code{\link{border}}, \code{\link{plotBorder}}
 }
-

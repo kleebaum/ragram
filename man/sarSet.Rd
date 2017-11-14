@@ -23,4 +23,3 @@ my.sar.set <- sarSet(c(kili[[1]], kili[[2]]))
 \seealso{
 \code{\link{SARSet-class}}
 }
-

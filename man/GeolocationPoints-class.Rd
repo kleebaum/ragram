@@ -11,4 +11,3 @@ This class inherits from the \code{\link[sp]{SpatialPointsDataFrame}} class of t
 \seealso{
 \code{\link{SpatialPointsDataFrame}}, \code{\link{SAR-class}}
 }
-
